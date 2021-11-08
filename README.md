@@ -12,3 +12,6 @@ Feature Branch Workflow를 따릅니다.
 ## Compatibility
 ![OpenJDK badge](https://img.shields.io/badge/OpenJdk-8-blue)  
 ![Tomcat bdage](https://img.shields.io/badge/Tomcat-v8.5-blue)
+
+## Import to Eclipse
+File > import > General > Projects from Folder or Archive
