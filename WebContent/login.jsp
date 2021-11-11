@@ -73,10 +73,10 @@
 		<form action="login.jsp" method="post">
 			<fieldset id = "login">
 				<legend>로그인</legend>
-					<table cellspacing = "10" cellpadding = "10">
+					<table>
 						<tr>
 							<td colspan = "2">
-								<br>
+								<br><br><br>
 							</td>
 						</tr>
 						<tr>
@@ -87,6 +87,11 @@
 							</td>
 						</tr>
 						<tr>
+							<td colspan = "2">
+								<br>
+							</td>
+						</tr>
+						<tr>
 							<td colspan="2">
 								<span class="material-icons" id="password">password</span>
 								&nbsp;&nbsp;
@@ -94,8 +99,18 @@
 							</td>
 						</tr>
 						<tr>
+							<td colspan = "2">
+								<br>
+							</td>
+						</tr>
+						<tr>
 							<td colspan = "2" align="center">
 								<input type = "submit" value="login"></input>
+							</td>
+						</tr>
+						<tr>
+							<td colspan = "2">
+								<br>
 							</td>
 						</tr>
 						<tr>
