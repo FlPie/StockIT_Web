@@ -15,26 +15,26 @@
 				url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
 				url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');}
 
-				.material-icons {font-family: 'Material Icons';
-								font-weight: normal;
-								font-style: normal;
-								font-size: 24px;  /* Preferred icon size */
-								display: inline-block;
-								line-height: 1;
-								text-transform: none;
-								letter-spacing: normal;
-								word-wrap: normal;
-								white-space: nowrap;
-								direction: ltr;
-								/* Support for all WebKit browsers. */
-								-webkit-font-smoothing: antialiased;
-								/* Support for Safari and Chrome. */
-								text-rendering: optimizeLegibility;
-								/* Support for Firefox. */
-								-moz-osx-font-smoothing: grayscale;
-								/* Support for IE. */
-								font-feature-settings: 'liga';
-								}
+			.material-icons {font-family: 'Material Icons';
+							font-weight: normal;
+							font-style: normal;
+							font-size: 24px;  /* Preferred icon size */
+							display: inline-block;
+							line-height: 1;
+							text-transform: none;
+							letter-spacing: normal;
+							word-wrap: normal;
+							white-space: nowrap;
+							direction: ltr;
+							/* Support for all WebKit browsers. */
+							-webkit-font-smoothing: antialiased;
+							/* Support for Safari and Chrome. */
+							text-rendering: optimizeLegibility;
+							/* Support for Firefox. */
+							-moz-osx-font-smoothing: grayscale;
+							/* Support for IE. */
+							font-feature-settings: 'liga';
+							}
 			#login{ height: 350px;
 					width: 400px;
 					margin-left: auto;
@@ -83,7 +83,7 @@
 							<td colspan="2">
 								<span class="material-icons" id="account_circle">account_circle</span>
 								&nbsp;&nbsp;							
-								<input type="text" name = "id" placeholder="Username">
+								<input type="text" name = "id" placeholder="Username"> <!-- input id/email -->
 							</td>
 						</tr>
 						<tr>
@@ -95,7 +95,7 @@
 							<td colspan="2">
 								<span class="material-icons" id="password">password</span>
 								&nbsp;&nbsp;
-								<input type="password" name = "password" placeholder="****">
+								<input type="password" name = "password" placeholder="****"> <!-- input password -->
 							</td>
 						</tr>
 						<tr>
@@ -105,7 +105,7 @@
 						</tr>
 						<tr>
 							<td colspan = "2" align="center">
-								<input type = "submit" value="login"></input>
+								<input type = "submit" value="login"></input> <!-- login button -->
 							</td>
 						</tr>
 						<tr>
@@ -114,8 +114,8 @@
 							</td>
 						</tr>
 						<tr>
-							<td><span class="material-icons" id = "find">lock</span><a href="">아이디/비밀번호 찾기</a></td>
-							<td align="right"><span class="material-icons" id="register">person_add</span><a href="">회원가입</a></td>
+							<td><span class="material-icons" id = "find">lock</span><a href="password_find.jsp">아이디/비밀번호 찾기</a></td> <!-- find password -->
+							<td align="right"><span class="material-icons" id="register">person_add</span><a href="register.jsp">회원가입</a></td> <!-- registration -->
 						</tr>				
 					</table>
 			</fieldset>
