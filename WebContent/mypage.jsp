@@ -8,15 +8,25 @@
                 margin-right: auto;
                 width: 97%;
                 height: 37%;
+                position: relative;
             }
         #profile_image{margin-left: auto;
                 margin-right: auto;
                 width: 97%;
                 height: 35%;
+                position: relative;
             }
-        #profile_table{width: 50%;
+        h3{position: absolute;
+            top: 10%;
+            left: 2.3%;
+        }
+        #information{ position: relative;
+                      left: 10%;
+
+        }
+        #profile_table{width: 70%;
                       height: 350px;}
-        #image_table{width: 50%;
+        #image_table{width: 70%;
                     height: 100px;}
         #nickname_text{width: 300px;
                         height: 30px;}
@@ -74,13 +84,13 @@
             <div id = "profile" class="border">
                 <table id="profile_table">
                     <tr>
-                        <td height = "80" colspan="2" valign = "bottom">
-                            <h3>&nbsp;&nbsp;&nbsp;&nbsp;프로필</h3>
+                        <td height = "80" valign = "bottom">
+                            <h3>프로필</h3>
                         </td>
                     </tr>
                     <tr>
-                        <td width = "300" height = "130">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이메일/아이디
+                        <td width = "30%" height = "130">
+                            <div id="information">이메일/아이디</div>
                         </td>
                         <td>
                             qwer1234@gmail.com <!-- todo: 이메일 정보 불러오기-->
@@ -88,16 +98,18 @@
                     </tr>
                     <tr>
                         <td height = "35">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;닉네임
+                            <div id="information">닉네임</div>
                         </td>
                         <td>
-                            <input type = "text" name = "nickname_text" id="nickname_text">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type = "submit" value="변경" id="nickname_change">
+                                <input type = "text" name = "nickname_text" id="nickname_text">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type = "submit" value="변경" id="nickname_change">                       
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" height = "130">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="password_reset"><small>비밀번호를 변경하고 싶다면 여기를 클릭하세요.</small></a></td>                        
+                        <td height = "130">
+                           <div id="information"><a href="password_reset"><small>비밀번호를 변경하고 싶다면 여기를 클릭하세요.</small></a></div>
+                        </td>                        
                     </tr>
                 </table>
             </div>
@@ -106,9 +118,9 @@
             <div id = "profile_image" class="border">
                 <table id = "image_table">
                     <tr>
-                        <td valign = "baseline" width ="32%">
+                        <td valign = "baseline" width ="40%">
                             <br><br>
-                            <h3>&nbsp;&nbsp;&nbsp;&nbsp;프로필 사진</h3>
+                            <h3>프로필 사진</h3>
                         </td>
                         <td valign = "baseline">
                             <br><br>
