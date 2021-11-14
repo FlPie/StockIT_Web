@@ -14,61 +14,63 @@
 </head>
 <body>
 <%--타이틀바--%>
-<header class="py-3 mb-3 border-bottom">
-    <div class="container-fluid d-grid gap-3 align-items-center align-middle" style="grid-template-columns: 100px 2fr 1fr 50px;">
-<%--        todo: link to 메인페이지-->--%>
-        <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-            <b style="font-size: 20px; font-family: Arial">Stock It</b>
-        </a>
-        <div class="d-flex align-items-center align-middle">
-<%--            todo: link to 검색페이지--%>
-            <form class="w-100 me-3">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-            </form>
-        </div>
-        <div><%-- white bar --%></div>
-        <div class="flex-shrink-0 align-item-center align-middle">
-<%--            todo: link to 마이페이지-->--%>
-            <a href="#" class="d-block link-dark text-decoration-none" id="main-page-user" aria-expanded="false">
-                <img src="./icons/NicePng_chen-png_3026464.png" alt="User" class="rounded-circle" width="32" height="32">
+<div>
+    <div class="py-3 mb-3 border-bottom">
+        <div class="container-fluid d-grid gap-3 align-items-center align-middle" style="grid-template-columns: 100px 2fr 1fr 50px;">
+    <%--        todo: link to 메인페이지-->--%>
+            <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <b style="font-size: 20px; font-family: Arial">Stock It</b>
             </a>
-        </div>
-    </div>
-</header>
-<%--메뉴바--%>
-<div class="m-4">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container-fluid">
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item">
-<%--                        todo: link to 메인페이지-->--%>
-                        <a href="#" class="nav-link">메인페이지</a>
-                    </li>
-                    <li class="nav-item">
-<%--                        todo: link to 메인페이지-->--%>
-                        <a href="#" class="nav-link">관심종목</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">주식</a>
-                        <div class="dropdown-menu">
-<%--                            todo: link to 국내주식-->--%>
-                            <a href="#" class="dropdown-item">국내주식</a>
-<%--                            todo: link to 해외주식-->--%>
-                            <a href="#" class="dropdown-item">해외주식</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-<%--                        todo: link to 뉴스-->--%>
-                        <a href="#" class="nav-link">뉴스</a>
-                    </li>
-                </ul>
+            <div class="d-flex align-items-center align-middle">
+    <%--            todo: link to 검색페이지--%>
+                <form class="w-100 me-3">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+            </div>
+            <div><%-- white bar --%></div>
+            <div class="flex-shrink-0 align-item-center align-middle">
+    <%--            todo: link to 마이페이지-->--%>
+                <a href="#" class="d-block link-dark text-decoration-none" id="main-page-user" aria-expanded="false">
+                    <img src="./icons/NicePng_chen-png_3026464.png" alt="User" class="rounded-circle" width="32" height="32">
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
+    <%--메뉴바--%>
+    <div class="m-4">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="container-fluid">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+    <%--                        todo: link to 메인페이지-->--%>
+                            <a href="#" class="nav-link">메인페이지</a>
+                        </li>
+                        <li class="nav-item">
+    <%--                        todo: link to 메인페이지-->--%>
+                            <a href="#" class="nav-link">관심종목</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">주식</a>
+                            <div class="dropdown-menu">
+    <%--                            todo: link to 국내주식-->--%>
+                                <a href="#" class="dropdown-item">국내주식</a>
+    <%--                            todo: link to 해외주식-->--%>
+                                <a href="#" class="dropdown-item">해외주식</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+    <%--                        todo: link to 뉴스-->--%>
+                            <a href="#" class="nav-link">뉴스</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 </div>
 </body>
 </html>
