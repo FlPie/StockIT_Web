@@ -4,26 +4,81 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.DriverManager;
-
 public class UserDAO {
 	
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
-	public UserDAO(){ //DB¿¬°á
+	public UserDAO(){ //DBï¿½ï¿½ï¿½ï¿½
 		try{
-			String dbURL = "jdbc:mysql://localhost:3306/STOCKIT";	//DBÁÖ¼Ò, Æ÷Æ® ±âº»3306
+			String dbURL = "jdbc:mysql://localhost:3306/STOCKIT";	//DBï¿½Ö¼ï¿½, ï¿½ï¿½Æ® ï¿½âº»3306
 			String dbID = "root";									
-			String dbPassword = "root";								//DB Á¢¼Ó pw 
+			String dbPassword = "1234";								//DB ï¿½ï¿½ï¿½ï¿½ pw 
 			Class.forName("com.mysql.jdbc.Driver");					
-			conn = DriverManager.getConnection(dbURL,dbID,dbPassword); //¿¬°á
+			conn = DriverManager.getConnection(dbURL,dbID,dbPassword); //ï¿½ï¿½ï¿½ï¿½
 		}catch (Exception e){
 			e.printStackTrace();
 		}
 	}
+	public ResultSet save(String userID)
+	{
+    	String sql="select * from user where userID=?";	
+    	try {
+    		PreparedStatement pstmt = conn.prepareStatement(sql);	
+    		pstmt.setString(1, userID);
+    		rs = pstmt.executeQuery();
+    	}catch (Exception e){
+			e.printStackTrace();
+		}
+    	return rs;
+	}
+	public void change_name(String userID, String userName)
+	{
+		String SQL = "SELECT * FROM USER WHERE userID = ?";
+		try{
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			if(rs.next())
+			{
+				if(rs.getString(1).equals(userID))
+				{
+					SQL="update user set userName=? where userID=?";
 	
-	public int login(String userID, String userPassword){				//·Î±×ÀÎ method
+					pstmt=conn.prepareStatement(SQL);
+	
+					pstmt.setString(1, userName);
+	
+					pstmt.setString(2, userID);
+	
+					pstmt.executeUpdate();
+				}
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
+	}
+	public void quit(String userID)
+	{
+		String SQL = "SELECT * FROM USER WHERE userID = ?";
+		try{
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			if(rs.next())
+			{
+				SQL="delete from user where userID=?";
+				pstmt=conn.prepareStatement(SQL);
+				pstmt.setString(1, userID);
+				pstmt.executeUpdate();
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	public int login(String userID, String userPassword){				//ï¿½Î±ï¿½ï¿½ï¿½ method
 		String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
 		try{
 			pstmt = conn.prepareStatement(SQL);
@@ -31,28 +86,29 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				if(rs.getString(1).equals(userPassword)){
-					return 1;											//ÀúÀåµÈ pw¿Í ÀÔ·ÂÇÑ pw °°À¸¸é 1 ¹ÝÈ¯
+					return 1;											//ï¿½ï¿½ï¿½ï¿½ï¿½ pwï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ pw ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1 ï¿½ï¿½È¯
 				}
 				else
-					return 0;											//pw´Ù¸£¸é 0 ¹ÝÈ¯
+					return 0;											//pwï¿½Ù¸ï¿½ï¿½ï¿½ 0 ï¿½ï¿½È¯
 			}
-			return -1;													//¾ÆÀÌµð ´Ù¸£¸é -1 ¹ÝÈ¯
+			return -1;													//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ -1 ï¿½ï¿½È¯
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		return -2;														//DB¿À·ù
+		return -2;														//DBï¿½ï¿½ï¿½ï¿½
 	}
-	public int register(User user){										//È¸¿ø°¡ÀÔ method
-		String SQL = "INSERT INTO USER VALUES (?, ?, ?)";
+	public int register(User user){										//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ method
+		String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?)";
 		try{
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, user.getUserID());						//Å×ÀÌºí¿¡ ID,PW,Name¼øÀ¸·Î ÀúÀåµÊ
+			pstmt.setString(1, user.getUserID());						//ï¿½ï¿½ï¿½Ìºï¿½ ID,PW,Nameï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 			pstmt.setString(2, user.getUserPassword());
 			pstmt.setString(3, user.getUserName());
+			pstmt.setString(4, user.getUserEmail());
 			return pstmt.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		return -1; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 }	

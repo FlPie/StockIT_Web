@@ -1,10 +1,12 @@
 package user;
 
-public class User {//사용자 정보 관리용
+public class User {
 	private String userID;
 	private String userPassword;
 	private String userName;
-	public String getUserID() {	//get set 메서드들
+	private String userEmail;
+	
+	public String getUserID() {	
 		return userID;
 	}
 	public void setUserID(String userID) {
@@ -22,6 +24,10 @@ public class User {//사용자 정보 관리용
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
-	
+	public String getUserEmail() {
+		return userEmail;
+	}
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}	
 }
