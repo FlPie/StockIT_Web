@@ -45,11 +45,16 @@
                border-width: 0px;}
         input[type = "file"]{ width: 300px;
                             height: 25px;}
-        .btn{position: absolute;
+        #withdrawal{position: absolute;
             right: 1.5%;
         }
         .img-thumbnail{width: 150px;
                       height: 150px;
+        }
+        #withdrawal{background-color: dodgerblue;
+        			 border-color: dodgerblue;
+        			 width: 10%;
+        			 height: 30px
         }
         </style>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -60,14 +65,6 @@
                     domEleArray[1] = domEleArray[0].clone(true);
                     $('#formFileSm').replaceWith(domEleArray[1]);
                     $('#image').attr("src", "https://via.placeholder.com/150");
-                });
-                $(".btn btn-primary").click(function(){
-                	String id = (String)session.getAttribute("id");
-    				UserDAO user = new UserDAO();
-    				user.quit(id);
-    				session.invalidate();
-    				response.sendRedirect("/login.jsp");
-                	
                 });
             });
 
@@ -157,6 +154,8 @@
                 </table>
             </div>
         </form>
-        <button type="button" class="btn btn-primary">탈퇴하기</button>
+        <form action = "withdrawal.jsp" method = "post">
+                <input type="submit" id = "withdrawal" value = "탈퇴하기">
+        </form>
     </body>
 </html>
