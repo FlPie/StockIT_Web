@@ -82,7 +82,7 @@
         </script>
     </head>
     <body>
-        <form> <!--todo send id & password data and save this -->
+        <form action = "registerAction.jsp" method = "post"> <!--todo send id & password data and save this -->
             <fieldset id="register">
                 <legend>회원가입</legend>
                 <table>
@@ -97,7 +97,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="id" id="id" placeholder="example"></td>
+                        <td><input type="text" name="userID" id="id" placeholder="example"></td>
                         <td>
                             <input type="text" name = "email_input" id = "email_input" placeholder="@abcd.com"> <!-- input email -->
                             <select name="selectEmail" id="selectEmail"> <!-- select email -->
@@ -123,7 +123,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="password" name="password" placeholder="****"> <!-- input password -->
+                            <input type="password" name="userPassword" placeholder="****"> <!-- input password -->
                         </td>
                     </tr>
                     <tr>
@@ -152,7 +152,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="text" name="nickname" placeholder="nickname"></td> <!-- input nickname -->
+                        <td colspan="2"><input type="text" name="userName" placeholder="nickname"></td> <!-- input nickname -->
                     </tr>
                     <tr>
                         <td colspan="2" align="center">
