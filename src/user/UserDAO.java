@@ -62,18 +62,11 @@ public class UserDAO {
 	}
 	public void quit(String userID)
 	{
-		String SQL = "SELECT * FROM USER WHERE userID = ?";
+		String SQL="DELETE FROM USER WHERE userID = ?";
 		try{
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
-			rs = pstmt.executeQuery();
-			if(rs.next())
-			{
-				SQL="delete from user where userID=?";
-				pstmt=conn.prepareStatement(SQL);
-				pstmt.setString(1, userID);
-				pstmt.executeUpdate();
-			}
+			pstmt.executeUpdate();
 		}catch (Exception e){
 			e.printStackTrace();
 		}
