@@ -16,3 +16,8 @@ Feature Branch Workflow를 따릅니다.
 
 ## Import to Eclipse
 File > import > General > Projects from Folder or Archive
+
+## mysql
+mysql jdbc 드라이버 다운로드후 `mysql-connector-java-8.x.x.jar`를  
+`StockIT/WebContent/WEB-INF/lib/` 디렉토리에 위치시키기
+- [mysql Connector/J 8.0.27](https://dev.mysql.com/downloads/connector/j/)
