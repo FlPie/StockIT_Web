@@ -12,6 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 	<%
@@ -19,11 +20,12 @@
 		UserDAO userDAO = new UserDAO();
 		int result = userDAO.login(user.getUserID(), user.getUserPassword());	//입력한 id,pw를 login메서드로 보냄
 		if (result == 1){
+			session.setAttribute("id", user.getUserID());
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href = 'mypage.jsp'");		//로그인 성공시 mypage.jsp로 이동(메인 페이지 만들어지면 메인으로 이동)
+			script.println("location.href = 'mypage.jsp'");   //로그인 성공시 mypage.jsp로 이동(메인 페이지 만들어지면 메인으로 이동)
 			script.println("</script>");
-		}else if(result == 0){
+			}else if(result == 0){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('비밀번호가 틀립니다.')");			//pw 입력 실패 전 페이지로 이동
