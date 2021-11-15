@@ -70,7 +70,7 @@
 		</style>
 	</head>
 	<body>
-		<form action="login.jsp" method="post">
+		<form action="loginAction.jsp" method="post">
 			<fieldset id = "login">
 				<legend>로그인</legend>
 					<table>
@@ -83,10 +83,10 @@
 							<td colspan="2">
 								<span class="material-icons" id="account_circle">account_circle</span>
 								&nbsp;&nbsp;							
-								<input type="text" name = "id" placeholder="Username"> <!-- input id/email -->
+								<input type="text" name = "userID" placeholder="Username"> <!-- input id/email -->
 							</td>
 						</tr>
-						<tr>
+						<tr>    
 							<td colspan = "2">
 								<br>
 							</td>
@@ -95,7 +95,7 @@
 							<td colspan="2">
 								<span class="material-icons" id="password">password</span>
 								&nbsp;&nbsp;
-								<input type="password" name = "password" placeholder="****"> <!-- input password -->
+								<input type="password" name = "userPassword" placeholder="****"> <!-- input password -->
 							</td>
 						</tr>
 						<tr>
