@@ -31,5 +31,6 @@ hs_err_pid*
 .idea/
 *.iml
 *.iws
+*.eml
 /build/
 /classes/

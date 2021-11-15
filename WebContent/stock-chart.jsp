@@ -15,24 +15,10 @@
 <div id="chart-container">
 </div>
 <script>
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
-    let chart_width = 600;
-    if(getParameterByName("chart-width")) {
-        chart_width = getParameterByName("chart-width");
-    }
-    let chart_height = 300;
-    if(getParameterByName("chart-height")) {
-        chart_height = getParameterByName("chart-height");
-    }
     var chart = LightweightCharts.createChart(document.getElementById("chart-container"), {
         container_id: "chart-container",
-        width: chart_width,
-        height: chart_height,
+        width: ${param.width},
+        height: ${param.height},
         layout: {
             backgroundColor: 'rgba(255, 255, 255, 0.9)',
             textColor: 'rgba(0, 0, 0, 0.9)',

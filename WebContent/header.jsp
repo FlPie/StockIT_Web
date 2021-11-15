@@ -17,9 +17,10 @@
 <%--타이틀바--%>
 <div>
     <div class="py-3 mb-3 border-bottom">
-        <div class="container-fluid d-grid gap-3 align-items-center align-middle" style="grid-template-columns: 100px 2fr 1fr 50px;">
-    <%--        todo: link to 메인페이지-->--%>
-            <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+<%--        use container-fluid for large page--%>
+<%--        <div class="container-fluid d-grid gap-3 align-items-center align-middle" style="grid-template-columns: 100px 2fr 1fr 50px;">--%>
+        <div class="container d-grid gap-3 align-items-center align-middle" style="grid-template-columns: 100px 2fr 1fr 50px;">
+            <a href="main.jsp" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <b style="font-size: 20px; font-family: Arial">Stock It</b>
             </a>
             <div class="d-flex align-items-center align-middle">
@@ -42,16 +43,19 @@
     </div>
     <%--메뉴바--%>
     <div class="m-4">
+<%--        don't usr fixed-top for large page--%>
+<%--        <nav class="navbar navbar-expand-sm navbar-light bg-light">--%>
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
-            <div class="container-fluid">
+<%--            use container-fluid for large page--%>
+<%--            <div class="container-fluid">--%>
+            <div class="container">
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
-    <%--                        todo: link to 메인페이지-->--%>
-                            <a href="#" class="nav-link">메인페이지</a>
+                            <a href="main.jsp" class="nav-link">메인페이지</a>
                         </li>
                         <li class="nav-item">
     <%--                        todo: link to 메인페이지-->--%>
