@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import = "user.UserDAO" %>
+<%@ page import = "java.sql.Connection" %>
+<%@ page import = "java.sql.PreparedStatement" %>
+<%@ page import = "java.sql.ResultSet" %>
+<%@ page import = "java.sql.DriverManager" %>
+
 <html>
     <head>
         <title>mypage</title>
@@ -55,6 +61,14 @@
                     $('#formFileSm').replaceWith(domEleArray[1]);
                     $('#image').attr("src", "https://via.placeholder.com/150");
                 });
+                $(".btn btn-primary").click(function(){
+                	String id = (String)session.getAttribute("id");
+    				UserDAO user = new UserDAO();
+    				user.quit(id);
+    				session.invalidate();
+    				response.sendRedirect("/login.jsp");
+                	
+                });
             });
 
             function setThumbnail(event) {
@@ -80,7 +94,7 @@
     </head>
     <body>
         <jsp:include page = "/header.jsp"/>
-        <form action = "" method = "post"> <!-- todo change nickname-->
+        <form action = "changeNameAction.jsp" method = "post"> <!-- todo change nickname-->
             <div id = "profile" class="border">
                 <table id="profile_table">
                     <tr>
@@ -89,11 +103,18 @@
                         </td>
                     </tr>
                     <tr>
-                        <td width = "30%" height = "130">
+                        <td width = "30%" height = "100">
                             <div id="information">이메일/아이디</div>
                         </td>
                         <td>
-                            qwer1234@gmail.com <!-- todo: 이메일 정보 불러오기-->
+                        	<%
+                        		UserDAO user = new UserDAO();
+                        		String id = (String)session.getAttribute("id");
+	                        	ResultSet rs = user.save(id);
+	                        	if(rs.next())
+	  								out.print(id + rs.getString(4));
+                        	%>
+                           		<!-- todo: 이메일 정보 불러오기-->
                         </td>
                     </tr>
                     <tr>
