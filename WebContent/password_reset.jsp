@@ -62,7 +62,7 @@
         </style>
     </head>
     <body>
-        <form action = "" method = "post"> <!-- todo send password and confirm password one more-->
+        <form action = "PasswordResetAction.jsp" method = "post"> <!-- todo send password and confirm password one more-->
             <fieldset id="reset">
                 <legend>비밀번호 재설정</legend>
                 <table>
@@ -78,7 +78,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="password" name="password" id="password"> <!-- input possword -->
+                            <input type="password" name="password" id="password"> <!-- input password -->
                         </td>
                     </tr>
                     <tr>
