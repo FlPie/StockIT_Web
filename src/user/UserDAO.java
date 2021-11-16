@@ -10,13 +10,13 @@ public class UserDAO {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
-	public UserDAO(){ //DB����
+	public UserDAO(){ 
 		try{
-			String dbURL = "jdbc:mysql://localhost:3306/STOCKIT";	//DB�ּ�, ��Ʈ �⺻3306
+			String dbURL = "jdbc:mysql://localhost:3306/STOCKIT";	
 			String dbID = "root";									
-			String dbPassword = "root";								//DB ���� pw 
+			String dbPassword = "root";							
 			Class.forName("com.mysql.jdbc.Driver");					
-			conn = DriverManager.getConnection(dbURL,dbID,dbPassword); //����
+			conn = DriverManager.getConnection(dbURL,dbID,dbPassword); 
 		}catch (Exception e){
 			e.printStackTrace();
 		}
@@ -98,7 +98,7 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
-	public int login(String userID, String userPassword){				//�α��� method
+	public int login(String userID, String userPassword){				
 		String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
 		try{
 			pstmt = conn.prepareStatement(SQL);
@@ -106,22 +106,22 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				if(rs.getString(1).equals(userPassword)){
-					return 1;											//����� pw�� �Է��� pw ������ 1 ��ȯ
+					return 1;											
 				}
 				else
-					return 0;											//pw�ٸ��� 0 ��ȯ
+					return 0;											
 			}
-			return -1;													//���̵� �ٸ��� -1 ��ȯ
+			return -1;													
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		return -2;														//DB����
+		return -2;														
 	}
-	public int register(User user){										//ȸ������ method
+	public int register(User user){										
 		String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?)";
 		try{
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, user.getUserID());						//���̺� ID,PW,Name������ �����
+			pstmt.setString(1, user.getUserID());						
 			pstmt.setString(2, user.getUserPassword());
 			pstmt.setString(3, user.getUserName());
 			pstmt.setString(4, user.getUserEmail());
@@ -129,6 +129,6 @@ public class UserDAO {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		return -1; //�����ͺ��̽� ����
+		return -1; 
 	}
 }	
