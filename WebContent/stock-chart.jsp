@@ -19,6 +19,8 @@
         container_id: "chart-container",
         width: ${param.width},
         height: ${param.height},
+        // width: 600,
+        // height: 300,
         layout: {
             backgroundColor: 'rgba(255, 255, 255, 0.9)',
             textColor: 'rgba(0, 0, 0, 0.9)',
