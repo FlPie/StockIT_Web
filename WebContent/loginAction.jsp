@@ -23,7 +23,7 @@
 			session.setAttribute("id", user.getUserID());
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("location.href = 'mypage.jsp'");   //로그인 성공시 mypage.jsp로 이동(메인 페이지 만들어지면 메인으로 이동)
+			script.println("location.href = 'main.jsp'");   //로그인 성공시 main.jsp로 이동
 			script.println("</script>");
 			}else if(result == 0){
 			PrintWriter script = response.getWriter();
