@@ -34,7 +34,7 @@
             },
         },
         crosshair: {
-            mode: LightweightCharts.CrosshairMode.Normal,
+            mode: LightweightCharts.CrosshairMode.Magnet,
         },
         rightPriceScale: {
             borderColor: 'rgba(197, 203, 206, 0.8)',
@@ -42,8 +42,11 @@
         timeScale: {
             borderColor: 'rgba(197, 203, 206, 0.8)',
         },
+        localization: {
+            locale: 'ko-KR',
+            dateFormat: 'yyyy/MM/dd',
+        },
     });
-
     var candleSeries = chart.addCandlestickSeries({});
     var volumeSeries = chart.addHistogramSeries({
         color: '#26a69a',
@@ -79,6 +82,7 @@
             }))
             ;
         });
+
 </script>
 </body>
 </html>

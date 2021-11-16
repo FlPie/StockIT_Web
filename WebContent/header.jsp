@@ -58,7 +58,7 @@
                             <a href="main.jsp" class="nav-link">메인페이지</a>
                         </li>
                         <li class="nav-item">
-    <%--                        todo: link to 메인페이지-->--%>
+    <%--                        todo: link to 관심종목-->--%>
                             <a href="#" class="nav-link">관심종목</a>
                         </li>
                         <li class="nav-item dropdown">

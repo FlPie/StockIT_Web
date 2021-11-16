@@ -24,7 +24,6 @@
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                         <h2 class="h2">주요증시1</h2>
                     </div>
-<%--                    todo: 창 크기 병경시 주식 그래프 크기 변경하도록 수정--%>
                     <div class="col-11 overflow-auto" id="stock-chart-container">
                         <c:import url="stock-chart.jsp">
                             <c:param name="ticker" value="05930.KS"/>
