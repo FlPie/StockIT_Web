@@ -111,7 +111,6 @@
 	                        	if(rs.next())
 	  								out.print(id + rs.getString(4));
                         	%>
-                           		<!-- todo: 이메일 정보 불러오기-->
                         </td>
                     </tr>
                     <tr>
@@ -126,7 +125,7 @@
                     </tr>
                     <tr>
                         <td height = "130">
-                           <div id="information"><a href="password_reset"><small>비밀번호를 변경하고 싶다면 여기를 클릭하세요.</small></a></div>
+                           <div id="information"><a href="password_reset.jsp"><small>비밀번호를 변경하고 싶다면 여기를 클릭하세요.</small></a></div>
                         </td>                        
                     </tr>
                 </table>
