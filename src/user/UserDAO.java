@@ -60,6 +60,33 @@ public class UserDAO {
 		}
 
 	}
+	public void change_password(String userID, String userPassword)
+	{
+		String SQL = "SELECT * FROM USER WHERE userID = ?";
+		try{
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			if(rs.next())
+			{
+				if(rs.getString(1).equals(userID))
+				{
+					SQL="update user set userPassword=? where userID=?";
+	
+					pstmt=conn.prepareStatement(SQL);
+	
+					pstmt.setString(1, userPassword);
+	
+					pstmt.setString(2, userID);
+	
+					pstmt.executeUpdate();
+				}
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
+	}
 	public void quit(String userID)
 	{
 		String SQL="DELETE FROM USER WHERE userID = ?";
