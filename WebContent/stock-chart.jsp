@@ -19,6 +19,8 @@
         container_id: "chart-container",
         width: ${param.width},
         height: ${param.height},
+        // width: 600,
+        // height: 300,
         layout: {
             backgroundColor: 'rgba(255, 255, 255, 0.9)',
             textColor: 'rgba(0, 0, 0, 0.9)',
@@ -32,7 +34,7 @@
             },
         },
         crosshair: {
-            mode: LightweightCharts.CrosshairMode.Normal,
+            mode: LightweightCharts.CrosshairMode.Magnet,
         },
         rightPriceScale: {
             borderColor: 'rgba(197, 203, 206, 0.8)',
@@ -40,8 +42,11 @@
         timeScale: {
             borderColor: 'rgba(197, 203, 206, 0.8)',
         },
+        localization: {
+            locale: 'ko-KR',
+            dateFormat: 'yyyy/MM/dd',
+        },
     });
-
     var candleSeries = chart.addCandlestickSeries({});
     var volumeSeries = chart.addHistogramSeries({
         color: '#26a69a',
@@ -77,6 +82,7 @@
             }))
             ;
         });
+
 </script>
 </body>
 </html>
