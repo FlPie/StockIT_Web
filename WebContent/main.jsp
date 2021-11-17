@@ -22,7 +22,7 @@
             <div class="row mt-2 mb-4 mx-2">
                 <div class="col-12">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                        <h2 class="h2">주요증시1</h2>
+                        <h2 class="h2">주요증시</h2>
                     </div>
                     <div class="col-11 overflow-auto" id="stock-chart-container">
                         <c:import url="stock-chart.jsp">
@@ -46,7 +46,6 @@
                                 <img src="./img/Test_image.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">뉴스1</h5>
-                                    <p class="card-text">뉴스 내용 요약</p>
                                 </div>
                             </a>
                             <div class="col-4 mb-3 mx-auto">
@@ -54,14 +53,12 @@
                                     <img src="./img/Test_image.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">뉴스2</h5>
-                                        <p class="card-text">뉴스 내용 요약</p>
                                     </div>
                                 </a>
                                 <a href="#" id="main-news3" class="row card text-decoration-none text-dark">
                                     <img src="./img/Test_image.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">뉴스3</h5>
-                                        <p class="card-text">뉴스 내용 요약</p>
                                     </div>
                                 </a>
                             </div>
@@ -75,7 +72,6 @@
                                     <div class="col-8">
                                         <div class="card-body">
                                             <h5 class="card-title">뉴스4</h5>
-                                            <p class="card-text">뉴스 내용 요약</p>
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +84,6 @@
                                     <div class="col-8">
                                         <div class="card-body">
                                             <h5 class="card-title">뉴스5</h5>
-                                            <p class="card-text">뉴스 내용 요약</p>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +96,6 @@
                                     <div class="col-8">
                                         <div class="card-body">
                                             <h5 class="card-title">뉴스6</h5>
-                                            <p class="card-text">뉴스 내용 요약</p>
                                         </div>
                                     </div>
                                 </div>
