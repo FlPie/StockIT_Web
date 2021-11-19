@@ -26,9 +26,9 @@ mysql jdbc 드라이버 다운로드후 `mysql-connector-java-8.x.x.jar`를
 프로필 수정란에서 선택한 이미지를 프로젝트 폴더에 저장하고, 필요할 때 접근하기 위해  
 'cos-xx.xx.zip를 다운 후 압축 파일 속 lib 파일 안의 'cos.jar'를 
 `StockIT/WebContent/WEB-INF/lib/` 디렉토리에 위치시키기
-[cos-20.08.zip](http://www.servlets.com/cos/)
+-[cos-20.08.zip](http://www.servlets.com/cos/)
 
 ## 데이터 베이스와 테이블
-데이터베이스 명 : stockit
-테이블 명 : user --> userID(primary key, not null), userPassword(not null), userName, userEmail
+-데이터베이스 명 : stockit
+-테이블 명 : user --> userID(primary key, not null), userPassword(not null), userName, userEmail
            image --> userID(primary key, not null), filename, filerealname
