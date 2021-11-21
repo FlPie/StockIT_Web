@@ -71,14 +71,10 @@ public class UserDAO {
 			{
 				if(rs.getString(1).equals(userID))
 				{
-					SQL="update user set userPassword=? where userID=?";
-	
-					pstmt=conn.prepareStatement(SQL);
-	
-					pstmt.setString(1, userPassword);
-	
-					pstmt.setString(2, userID);
-	
+					SQL="update user set userPassword=? where userID=?";	
+					pstmt=conn.prepareStatement(SQL);	
+					pstmt.setString(1, userPassword);	
+					pstmt.setString(2, userID);	
 					pstmt.executeUpdate();
 				}
 			}
@@ -97,6 +93,64 @@ public class UserDAO {
 		}catch (Exception e){
 			e.printStackTrace();
 		}
+	}
+	
+	public void profile_image_upload(String userID, String fileName, String fileRealName) {
+
+		String SQL = "SELECT * FROM IMAGE WHERE userID = ?";
+		try{
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			if(rs.next())
+			{
+				SQL="update image set filename=?, filerealname=? where userID=?";
+				PreparedStatement pstmt = conn.prepareStatement(SQL);
+				pstmt.setString(1,  fileName);
+				pstmt.setString(2,  fileRealName);
+				pstmt.setString(3,  userID);
+				pstmt.executeUpdate();
+			}
+			else
+			{
+				SQL = "INSERT INTO IMAGE VALUES (?, ?, ?)";
+				try {
+
+					PreparedStatement pstmt = conn.prepareStatement(SQL);
+					pstmt.setString(1,  userID);
+					pstmt.setString(2,  fileName);
+					pstmt.setString(3,  fileRealName);
+					pstmt.executeUpdate();
+			}catch (Exception e){
+			e.printStackTrace();
+			}
+			}
+		}catch (Exception e){
+		e.printStackTrace();
+		}
+	}
+	
+	public String profile_image_get(String userID)
+	{
+		String Dir = null;
+		String SQL = "SELECT * FROM IMAGE WHERE userID = ?";
+		try{
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			if(rs.next() && (rs.getString(3) != null))
+				{
+					Dir = "profile_image/" + rs.getString(3); // 나중에 파일 합칠 때 경로 변경 필요
+				}
+			else
+				{
+					Dir = "https://via.placeholder.com/150";
+				}
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}	
+		return Dir;
 	}
 	public int login(String userID, String userPassword){				
 		String SQL = "SELECT userPassword FROM USER WHERE userID = ?";

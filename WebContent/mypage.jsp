@@ -48,8 +48,9 @@
         #withdrawal{position: absolute;
             right: 1.5%;
         }
-        .img-thumbnail{width: 150px;
-                      height: 150px;
+        #image{width: 150px;
+              height: 150px;
+              object-fit: cover;
         }
         #withdrawal{background-color: dodgerblue;
         			 border-color: dodgerblue;
@@ -59,7 +60,8 @@
         </style>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-            $(document).ready(function() {
+            $(document).ready(function() {           	
+            	
                 var domEleArray = [$('#formFileSm').clone()];
                 $('#delete_image').click(function() {
                     domEleArray[1] = domEleArray[0].clone(true);
@@ -131,7 +133,7 @@
                 </table>
             </div>
         </form>
-        <form name = "form_image" action = "" method = "post"> <!-- todo change profile image-->
+        <form name = "form_image" action = "profile_image_uploadAction.jsp" method = "post" enctype="multipart/form-data"> <!-- todo change profile image-->
             <div id = "profile_image" class="border">
                 <table id = "image_table">
                     <tr>
@@ -141,12 +143,12 @@
                         </td>
                         <td valign = "baseline">
                             <br><br>
-                            <img id = "image" src="https://via.placeholder.com/150" class="img-thumbnail" alt="...">
+                            <img id = "image" src= "<%= user.profile_image_get(id) %>" class="img-thumbnail" alt="..."/>
                             <br>
-                            <input type="button" value="삭제" id = "delete_image"><input type="submit" value="적용" id="apply">
+                            <button type = "button" id = "delete_image">삭제</button><input type="submit" value="적용" id="apply">
                             <br><br>
                             <div class="mb-3">
-                                <input class="form-control form-control-sm" id="formFileSm" type="file" onchange="setThumbnail(event)" accept="image/*">
+                                <input class="form-control form-control-sm" name = "file" id="formFileSm" type="file" onchange="setThumbnail(event)" accept="image/*">
                             </div>
                         </td>
                     </tr>
