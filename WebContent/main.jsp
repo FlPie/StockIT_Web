@@ -175,8 +175,6 @@
         </div>
     </div>
 </div>
-<footer>
-    <br><h4>this is end of the page</h4><br>
-</footer>
+<c:import url="footer.jsp"></c:import>
 </body>
 </html>

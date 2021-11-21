@@ -10,11 +10,12 @@
 <head>
     <style>
         .footer {
-            position: fixed;
+            position: relative;
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 20px;
+            margin-top: 40px;
+            padding: 20px 20px 10px 20px;
             background-color: rgba(0,0,0,0.2);
             color: rgba(0,0,0,0.6);
             text-align: center;
