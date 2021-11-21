@@ -16,8 +16,8 @@
             width: 100%;
             margin-top: 40px;
             padding: 20px 20px 10px 20px;
-            background-color: rgba(0,0,0,0.2);
-            color: rgba(0,0,0,0.6);
+            background-color: rgba(0,0,0,0.05);
+            color: rgba(0,0,0,0.4);
             text-align: center;
         }
     </style>
