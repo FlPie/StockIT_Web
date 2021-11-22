@@ -137,7 +137,11 @@
                                 <td>
 									<p>0000</p>
                                 </td>
-                            </tr>                                                     
+                            </tr>
+                           <tr>
+                                <td scope="row" colspan = "2"><button type="button" class="btn btn-outline-secondary" onclick = "#">관심 종목 등록</button></td>
+                            </tr>
+                                                                                 
                     </tbody>
                 </table>
             </div>
