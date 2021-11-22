@@ -33,3 +33,15 @@ mysql jdbc 드라이버 다운로드후 `mysql-connector-java-8.x.x.jar`를
 - 테이블 명 
 - user --> userID(primary key, not null), userPassword(not null), userName, userEmail
 - image --> userID(primary key, not null), filename, filerealname
+- news --> NewsId(primary key, not null auto_increment), link(not null), title(not_null), imgPath
+
+### 뉴스 데이터베이스
+뉴스를 크롤링하는 시스템을 제작하기 전까지 테스트를 위해 적어도 10개의 데이터가 저장되어 있어야 합니다.
+```sql
+create table news(
+                     NewsId int auto_increment primary key not null ,
+                     link varchar(256) not null ,
+                     title varchar(128) not null ,
+                     imgPath varchar(128) null
+);
+```
