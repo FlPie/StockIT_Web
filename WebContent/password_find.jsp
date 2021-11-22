@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%! public int getRandom(){
+	int random = 0;
+	random = (int)Math.floor((Math.random()*9999-1000+1)) + 1000;
+	return random;
+	}%>
+}
 <html>
 <head>
     <meta charset="UTF-8">
@@ -77,10 +83,10 @@
                         <h3>이메일 입력</h3>
                     </td>
                 </tr>
-                <form action = "" method = "post"> <!-- todo send qualification number to email -->
+                <form action = "checkMail.jsp" method = "post"> <!-- todo send qualification number to email -->
                 <tr>
                     <td>
-                        <input type="text" name="id"> <!-- input email -->
+                        <input type="text" name="userEmail"> <!-- input email -->
                     </td>
                     <td>
                         <input type="submit" value = "전송" id="send" name="send"> <!-- send qualification number to typed email -->
@@ -97,7 +103,7 @@
                         <h3>인증번호 입력</h3> 
                     </td>
                 </tr>
-                <form action = "" method = "post">  <!-- todo confirm qualification number-->
+                <form action = "checkNumber.jsp" method = "post">  <!-- todo confirm qualification number-->
                 <tr>
                     <td>
                         <input type="text" name="confirm">
@@ -115,7 +121,7 @@
                 <form action = "" method = "post"> <!-- todo  move to password reset-->
                 <tr>
                     <td colspan="2" align="center">
-                        <input type = "submit" id = "search" value="search"> <!-- move to password reset -->              
+                        <input type = "submit" id = "search" value="search"> <!-- 인증되면 바로 넘어가는게? -->              
                     </td>
                 </tr>
                 </form>

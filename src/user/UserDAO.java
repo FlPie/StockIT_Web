@@ -14,8 +14,8 @@ public class UserDAO {
 		try{
 			String dbURL = "jdbc:mysql://localhost:3306/STOCKIT";	
 			String dbID = "root";									
-			String dbPassword = "root";							
-			Class.forName("com.mysql.jdbc.Driver");					
+			String dbPassword = "0000";							
+			Class.forName("com.mysql.cj.jdbc.Driver");					
 			conn = DriverManager.getConnection(dbURL,dbID,dbPassword); 
 		}catch (Exception e){
 			e.printStackTrace();
@@ -94,6 +94,26 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
+	public int checkMail(String userEmail)
+	{
+		String SQL="SELECT userEmail FROM USER WHERE userEmail = ?";
+		try{
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userEmail);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				if(rs.getString("userEmail").equals(userEmail)){
+					return 1;											
+				}
+				else
+					return 0;											
+			}
+			return -1;													
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return -2;		
+	}
 	
 	public void profile_image_upload(String userID, String fileName, String fileRealName) {
 
@@ -140,7 +160,7 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next() && (rs.getString(3) != null))
 				{
-					Dir = "profile_image/" + rs.getString(3); // ÎÇòÏ§ëÏóê ÌååÏùº Ìï©Ïπ† Îïå Í≤ΩÎ°ú Î≥ÄÍ≤Ω ÌïÑÏöî
+					Dir = "profile_image/" + rs.getString(3); // ≥™¡ﬂø° ∆ƒ¿œ «’ƒ• ∂ß ∞Ê∑Œ ∫Ø∞Ê « ø‰
 				}
 			else
 				{
