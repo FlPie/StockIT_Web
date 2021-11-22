@@ -56,6 +56,28 @@ public class NewsDao {
             System.out.println("DB 연동 오류 : " + e.getMessage());
         }
     }
+
+    public void crawlAndInsertNews() {
+        NewsCrawler c = new NewsCrawler();
+        List<String> newsUrls = c.getNaverNewslists();
+        for(String url : newsUrls) {
+            NewsBean b = c.getNaverNewsBean(url);
+            insertNews(b);
+        }
+    }
+    public void crawlAndInsertNews(String date) {
+        NewsCrawler c = new NewsCrawler();
+        List<String> newsUrls = c.getNaverNewslists(date);
+        for(String url : newsUrls) {
+            NewsBean b = c.getNaverNewsBean(url);
+            insertNews(b);
+        }
+    }
+//
+//    public static void main(String[] args) {
+//        NewsDao d = new NewsDao();
+//        d.crawlAndInsertNews();
+//    }
 }
 
 
