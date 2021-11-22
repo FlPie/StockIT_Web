@@ -21,7 +21,6 @@ public class NewsDao {
         List<NewsBean> list = new ArrayList<NewsBean>();
         String sql;
 
-        System.out.println("DB Connect");
         try {
 
             Connection conn = DriverManager.getConnection(dbUrl, user, pw);
