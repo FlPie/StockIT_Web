@@ -71,8 +71,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-    <%--                        todo: link to 뉴스-->--%>
-                            <a href="#" class="nav-link">뉴스</a>
+                            <a href="news.jsp" class="nav-link">뉴스</a>
                         </li>
                     </ul>
                 </div>
