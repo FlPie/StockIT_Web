@@ -5,8 +5,11 @@
   Time: 오후 4:33
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page import="java.util.*" %>
+<%@ page import="news.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<jsp:useBean id="newsdao" class="news.NewsDao" />
 <html>
 <head>
     <title>Title</title>
@@ -33,69 +36,91 @@
                     </div>
                 </div>
             </div>
-<%--            뉴스--%>
-<%--            todo: 뉴스 데이터 서버에서 받아와서 처리하도록 변경--%>
+            <%--뉴스--%>
             <div class="row mt-2 mx-2">
+                <%
+                    List<NewsBean> list = newsdao.getNews();
+                    int size = list.size();
+
+                    // 랜덤한 숫자 배열 생성
+                    // 배열의 크기는 페이지에서 표시말 뉴스 개수
+                    Random rand = new Random();
+                    Set<Integer> generate = new TreeSet<>();
+                    while (generate.size() < 6) {
+                        generate.add(rand.nextInt(size));
+                    }
+                    Stack<Integer> randNum = new Stack<Integer>();
+                    for(Integer i : generate) {
+                        randNum.push(i);
+                    }
+                    NewsBean b;
+                %>
                 <div class="col-12 ">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                         <h2 class="h2">뉴스</h2>
                     </div>
                     <div class="col-12" id="news-grid">
                         <div class="row">
-                            <a href="#" id="main-news1" class="col-7 card mb-3 mx-auto text-decoration-none text-dark">
-                                <img src="./img/Test_image.jpg" class="card-img-top" alt="...">
+                            <% b = list.get(randNum.pop()); %>
+                            <a href="<%= b.getLink() %>" id="main-news1" class="col-7 card mb-3 mx-auto text-decoration-none text-dark">
+                                <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
                                 <div class="card-body">
-                                    <h5 class="card-title">뉴스1</h5>
+                                    <h5 class="card-title"><%= b.getTitle() %></h5>
                                 </div>
                             </a>
                             <div class="col-4 mb-3 mx-auto">
-                                <a href="#" id="main-news2" class="row card mb-3 text-decoration-none text-dark">
-                                    <img src="./img/Test_image.jpg" class="card-img-top" alt="...">
+                                <% b = list.get(randNum.pop()); %>
+                                <a href="<%= b.getLink() %>" id="main-news2" class="row card mb-3 text-decoration-none text-dark">
+                                    <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
                                     <div class="card-body">
-                                        <h5 class="card-title">뉴스2</h5>
+                                        <h5 class="card-title"><%= b.getTitle() %></h5>
                                     </div>
                                 </a>
-                                <a href="#" id="main-news3" class="row card text-decoration-none text-dark">
-                                    <img src="./img/Test_image.jpg" class="card-img-top" alt="...">
+                                <% b = list.get(randNum.pop()); %>
+                                <a href="<%= b.getLink() %>" id="main-news3" class="row card text-decoration-none text-dark">
+                                    <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
                                     <div class="card-body">
-                                        <h5 class="card-title">뉴스3</h5>
+                                        <h5 class="card-title"><%= b.getTitle() %></h5>
                                     </div>
                                 </a>
                             </div>
                         </div>
                         <div class="row mx-auto">
-                            <a href="#" id="main-news4" class="card col-12 mb-3 text-decoration-none text-dark">
+                            <% b = list.get(randNum.pop()); %>
+                            <a href="<%= b.getLink() %>" id="main-news4" class="card col-12 mb-3 text-decoration-none text-dark">
                                 <div class="row">
                                     <div class="col-4">
-                                        <img src="./img/Test_image.jpg" class="card-img-top" alt="...">
+                                        <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
                                     </div>
                                     <div class="col-8">
                                         <div class="card-body">
-                                            <h5 class="card-title">뉴스4</h5>
+                                            <h5 class="card-title"><%= b.getTitle() %></h5>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                            <a href="#" id="main-news5" class="card col-12 mb-3 text-decoration-none text-dark">
+                            <% b = list.get(randNum.pop()); %>
+                            <a href="<%= b.getLink() %>" id="main-news5" class="card col-12 mb-3 text-decoration-none text-dark">
                                 <div class="row">
                                     <div class="col-4">
-                                        <img src="./img/Test_image.jpg" class="card-img-top" alt="...">
+                                        <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
                                     </div>
                                     <div class="col-8">
                                         <div class="card-body">
-                                            <h5 class="card-title">뉴스5</h5>
+                                            <h5 class="card-title"><%= b.getTitle() %></h5>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                            <a href="#" id="main-news6" class="card col-12 mb-3 text-decoration-none text-dark">
+                            <% b = list.get(randNum.pop()); %>
+                            <a href="<%= b.getLink() %>" id="main-news6" class="card col-12 mb-3 text-decoration-none text-dark">
                                 <div class="row">
                                     <div class="col-4">
-                                        <img src="./img/Test_image.jpg" class="card-img-top" alt="...">
+                                        <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
                                     </div>
                                     <div class="col-8">
                                         <div class="card-body">
-                                            <h5 class="card-title">뉴스6</h5>
+                                            <h5 class="card-title"><%= b.getTitle() %></h5>
                                         </div>
                                     </div>
                                 </div>
