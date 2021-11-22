@@ -17,16 +17,24 @@ Feature Branch Workflow를 따릅니다.
 ## Import to Eclipse
 File > import > General > Projects from Folder or Archive
 
-## mysql
+## 환경설정
+### mysql
 mysql jdbc 드라이버 다운로드후 `mysql-connector-java-8.x.x.jar`를  
 `StockIT/WebContent/WEB-INF/lib/` 디렉토리에 위치시키기
 - [mysql Connector/J 8.0.27](https://dev.mysql.com/downloads/connector/j/)
 
-## cos.jar
+### cos.jar
 프로필 수정란에서 선택한 이미지를 프로젝트 폴더에 저장하고, 필요할 때 접근하기 위해  
 'cos-xx.xx.zip를 다운 후, 압축 해제 후에 lib 폴더 안 'cos.jar'를 
 `StockIT/WebContent/WEB-INF/lib/` 디렉토리에 위치시키기
 - [cos-20.08.zip](http://www.servlets.com/cos/)
+
+### jsoup
+웹 페이지를 크롤링 하기 위한 라이브러리
+jsoup-1.14.x.jar 파일을 다운로드 받고,   
+파일을 `StockIT/WebContent/WEB-INF/lib/` 디렉토리에 위치시키기
+- [jsoup hompage](https://jsoup.org)
+- [jsoup-1.14.3.jar](https://jsoup.org/packages/jsoup-1.14.3.jar)
 
 ## 데이터 베이스와 테이블
 - 데이터베이스 명 : stockit
