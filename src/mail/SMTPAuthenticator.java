@@ -6,6 +6,6 @@ import javax.mail.PasswordAuthentication;
 public class SMTPAuthenticator extends Authenticator{
 	@Override
 	protected PasswordAuthentication getPasswordAuthentication(){
-		return new PasswordAuthentication("包府磊 皋老","包府磊 皋老 pw");
+		return new PasswordAuthentication("admin mail","admin mail pw");
 	}
 }
