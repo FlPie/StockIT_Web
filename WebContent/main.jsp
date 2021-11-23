@@ -41,7 +41,11 @@
                 <%
                     List<NewsBean> list = newsdao.getNews();
                     int size = list.size();
-
+                    // 뉴스의 개수가 6개보다 적으면 자동으로 뉴스 크롤링
+                    if(size < 6) {
+                        response.sendRedirect("crawlNews.jsp");
+                        return;
+                    }
                     // 랜덤한 숫자 배열 생성
                     // 배열의 크기는 페이지에서 표시말 뉴스 개수
                     Random rand = new Random();
