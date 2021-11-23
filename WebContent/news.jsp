@@ -28,7 +28,11 @@
 <%
   List<NewsBean> list = newsdao.getNews();
   int size = list.size();
-
+  // 필요한 뉴스의 개수가 부족한 경우 자동적으로 뉴스를 크롤링
+  if(size < 10) {
+    response.sendRedirect("crawlNews.jsp");
+    return;
+  }
   // 랜덤한 숫자 배열 생성
   // 배열의 크기는 페이지에서 표시말 뉴스 개수
   Random rand = new Random();
@@ -44,6 +48,12 @@
 %>
 <c:import url="header.jsp"/>
 <div class="container">
+  <div class="row">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+      <h2 class="h2">뉴스</h2>
+      <a href="crawlNews.jsp" class="btn btn-outline-primary">뉴스 업데이트</a>
+    </div>
+  </div>
   <div class="row">
     <div class="col-7 mx-auto">
       <% b = list.get(randNum.pop()); %>
