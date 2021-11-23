@@ -21,7 +21,7 @@ public class NewsCrawler {
     }
     public List<String> getNaverNewslists(Date date) {   // 네이버의 주요뉴스 링크들을 크롤링하는 함수
         List<String> newsUrls = new ArrayList<>();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return getStrings(newsUrls, naverFinanceNewsMainUrl + "?date=" + dateFormat.format(date));
     }
     public List<String> getNaverNewslists(String date) {    // 네이버의 주요뉴스 링크들을 크롤링하는 함수
