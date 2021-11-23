@@ -17,6 +17,10 @@
     NewsDao d = new NewsDao();
     d.crawlAndInsertNews();
 %>
+<%--
+todo: 단순히 뉴스페이지로 돌아가는 것이 아니라 호출한 페이지로 이동하도록 수정하면 좋음
+      구현이 정 어려우면 뉴스 크롤링이 필요한 페이지별로 따로따로 크롤링 페이지를 생성
+--%>
 <c:redirect url="news.jsp"/>
 </body>
 </html>
