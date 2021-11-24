@@ -6,11 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%-- todo: - 이미지 사이즈에 따라 뉴스 카드들의 사이즈가 달라지는 것 수정
-           - 뉴스를 크롤링할때 DB에 존재하는 뉴스라면 DB에 추가하지 않도록 수정
-           - 현재로서는 crawlNews.jsp 페이지에 방문해야만 뉴스를 크롤링하도록 되어 있는 상태
-             어떠한 조건에서 뉴스를 업데이트 할지 고민해봐야함
-             1. 특정 시간에 맞춰서 서버측에서 업데이트 수행?
-             2. 버튼을 눌르면 업데이트 수행?
            - 현재는 네이버 금융의 뉴스 > 주요뉴스만을 크롤링 해오는 상황.
            - 추가적으로 다른 사이트의 뉴스를 크롤링 하는 기능을 추가할지 고민해봐야 함. --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
