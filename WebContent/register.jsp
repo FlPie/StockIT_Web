@@ -64,21 +64,25 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript">
         $(document).ready(function(){
+        	$('#submit').click(function()
+        		{
+        		 $("#email_input").attr("disabled",false);
+        		});
             $('#selectEmail').change(function(){ 
             $("#selectEmail option:selected").each(function(){ 
-        if($(this).val() != '1')
-            {
-                $("#email_input").val($(this).text());
-                $("#email_input").attr("disabled",true);
-            }
-            else
-            { 
-                $("#email_input").val('');
-                $("#email_input").attr("disabled",false);
-            } 
-            }); 
+		        if($(this).val() != '1')
+		            {
+		                $("#email_input").attr("value", $(this).val());
+		                $("#email_input").attr("disabled",true);
+		            }
+		            else
+		            { 
+		                $("#email_input").val('');
+		                $("#email_input").attr("disabled",false);
+		            } 
+		        }); 
+        	});
         });
-        });     
         </script>
     </head>
     <body>
@@ -99,7 +103,7 @@
                     <tr>
                         <td><input type="text" name="userID" id="id" placeholder="example"></td>
                         <td>
-                            <input type="text" name = "email_input" id = "email_input" placeholder="@abcd.com"> <!-- input email -->
+                            <input type="text" name = "userEmail" id = "email_input" placeholder="@abcd.com"> <!-- input email -->
                             <select name="selectEmail" id="selectEmail"> <!-- select email -->
                                 <option value="1">직접입력</option>
                                 <option value="@gmail.com">@gmail.com</option>
@@ -157,7 +161,7 @@
                     <tr>
                         <td colspan="2" align="center">
                         <br><br><br>
-                            <input type = "submit" value="check">                      
+                            <input id = "submit" type = "submit" value="check">                      
                         </td>
                     </tr>
                 </table>
