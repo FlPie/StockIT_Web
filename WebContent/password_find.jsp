@@ -40,7 +40,7 @@
 						/* Support for IE. */
 						font-feature-settings: 'liga';
 						}
-        #find{ height: 600px;
+        #find{ height: 400px;
 				width: 500px;
 				margin-left: auto;
 				margin-right: auto;
@@ -53,15 +53,13 @@
 			    margin-right: auto;
                 width: 400px;
 			}
-        #search{font-family: 'Material Icons';
-               font-size: 24px;
-               height: 40px;
-               width: 430px;
-               background-color: dodgerblue;
-			   border-width: 0px;
-			   border-radius: 5px;}
         #send{height: 25px;} 
-        #confirm{height: 25px;}
+        #confirm{font-family: 'Material Icons';
+        		height: 25px;
+        		width: 40px;
+        		background-color : dodgerblue;
+        		border-width: 0px;
+			   border-radius: 5px;}
         input[type = "text"]{width: 350px;
                             height: 30px;
 
@@ -108,19 +106,7 @@
                         <input type="text" name="confirm">
                     </td>
                     <td>
-                        <input type="submit" value = "확인" id="confirm" name="confirm"> <!-- confirm qualification number -->
-                    </td>
-                </tr>
-                </form>
-                <tr>
-                    <td colspan = "2">
-                        <br><br><br><br><br><br><br><br><br>
-                    </td>
-                </tr>
-                <form action = "" method = "post"> <!-- todo  move to password reset-->
-                <tr>
-                    <td colspan="2" align="center">
-                        <input type = "submit" id = "search" value="search"> <!-- 인증되면 바로 넘어가는게? -->              
+                        <input type="submit" value = "search" id="confirm" name="confirm"> <!-- confirm qualification number -->
                     </td>
                 </tr>
                 </form>
