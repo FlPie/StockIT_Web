@@ -111,7 +111,7 @@
                         		String id = (String)session.getAttribute("id");
 	                        	ResultSet rs = user.save(id);
 	                        	if(rs.next())
-	  								out.print(id + rs.getString(4));
+	  								out.print(rs.getString(4));
                         	%>
                         </td>
                     </tr>
