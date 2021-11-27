@@ -61,7 +61,7 @@ jsoup-1.14.x.jar 파일을 다운로드 받고,
 - image --> userID(primary key, not null), filename, filerealname
 - news --> NewsId(primary key, not null auto_increment), link(not null), title(not_null), imgPath
 
-###유저 정보 데이터베이스
+### 유저 정보 데이터베이스
 ```sql
 create table user(
                      userId varchar(64) primary key not null,
@@ -70,7 +70,7 @@ create table user(
                      userEmail varchar(64)
 );
 ```
-###유저 프로필 이미지 데이터베이스
+### 유저 프로필 이미지 데이터베이스
 ```sql
 create table image(
                      userId varchar(64) primary key not null,
