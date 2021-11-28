@@ -7,6 +7,7 @@
 <jsp:setProperty name="user" property = "userID" />
 <jsp:setProperty name="user" property = "userPassword" />
 <jsp:setProperty name="user" property = "userName" />	
+<jsp:setProperty name="user" property = "userEmail" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +34,7 @@
 			}else{
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
+				script.println("alert('회원가입이 완료되었습니다.')");
 				script.println("location.href = 'login.jsp'");	   //정상적으로 회원가입 -> login페이지로 이동하여 로그인
 				script.println("</script>");
 			}

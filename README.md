@@ -40,6 +40,12 @@ mysql jdbc 드라이버 다운로드후 `mysql-connector-java-8.x.x.jar`를
 `StockIT/WebContent/WEB-INF/lib/` 디렉토리에 위치시키기
 - [mysql Connector/J 8.0.27](https://dev.mysql.com/downloads/connector/j/)
 
+### mail
+메일인증 위한 라이브러리
+mail-1.4.7.jar와 activation-1.1.jar 다운 받아서 
+두 jar파일 'StockIT/WebContent/WEB-INF/lib/' 경로에 위치시키기
+(https://heodolf.tistory.com/99)에서 잘 실행되는 mail.jar, activation.jar 다운 가능
+
 ### cos.jar
 프로필 수정란에서 선택한 이미지를 프로젝트 폴더에 저장하고, 필요할 때 접근하기 위해  
 'cos-xx.xx.zip를 다운 후, 압축 해제 후에 lib 폴더 안 'cos.jar'를 
@@ -61,6 +67,24 @@ jsoup-1.14.x.jar 파일을 다운로드 받고,
 - image --> userID(primary key, not null), filename, filerealname
 - news --> NewsId(primary key, not null auto_increment), link(not null), title(not_null), imgPath
 
+### 유저 정보 데이터베이스
+```sql
+create table user(
+                     userId varchar(64) primary key not null,
+                     userPassword varchar(64),
+                     userName varchar(64),
+                     userEmail varchar(64)
+);
+```
+### 유저 프로필 이미지 데이터베이스
+```sql
+create table image(
+                     userId varchar(64) primary key not null,
+                     filename varchar(256),
+                     filerealname varchar(256)
+);
+```
+
 ### 뉴스 데이터베이스
 중복된 뉴스를 크롤링하는 것을 방지하기 위해 테이블 구조를 수정했습니다.  
 이전에 뉴스 테이블을 생성한 경우 꼭 테이블을 다시 생성해주세요.  
@@ -71,5 +95,25 @@ create table news(
                      link varchar(256) unique not null ,
                      title varchar(128) not null ,
                      imgPath varchar(128) null
+);
+```
+
+### 주식 데이터베이스
+주식에 대한 기본적인 데이터들을 저장한 테이블  
+이후 수정될 수도 있음.
+- 현재 csv 파일에서 데이터를 데이터베이스에 저장하는 방식을 사용하고 있음.  
+   - ReadCsv.java 52번 라인에 있는 main을 주석 해제하고 실행하여 데이터 삽입.
+   - csv 파일 출처:
+      - [Nasdaq](https://www.nasdaq.com/market-activity/stocks/screener)  
+      - [한국거래소](http://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd)
+```sql
+create table stock(
+                    Symbol varchar(64) primary key not null,
+                    Market varchar(16) not null,
+                    Name varchar(256) not null,
+                    LastSale numeric(10,2),
+                    MarketCap numeric(32),
+                    Country varchar(32),
+                    Volume numeric(16)
 );
 ```

@@ -17,7 +17,10 @@
 	UserDAO user = new UserDAO();
 	user.quit(id);
 	session.invalidate();
-	response.sendRedirect("login.jsp");
+	out.println("<script>");
+	out.println("alert('회원 탈퇴 되었습니다.')");
+	out.println("location.href='main.jsp'");
+	out.println("</script>");
 	%>
 </body>
 </html>

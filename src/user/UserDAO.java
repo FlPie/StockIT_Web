@@ -86,8 +86,13 @@ public class UserDAO {
 	public void quit(String userID)
 	{
 		String SQL="DELETE FROM USER WHERE userID = ?";
+		String SQL2="DELETE FROM IMAGE WHERE userID = ?";
 		try{
 			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			pstmt.executeUpdate();
+			
+			pstmt = conn.prepareStatement(SQL2);
 			pstmt.setString(1, userID);
 			pstmt.executeUpdate();
 		}catch (Exception e){
@@ -160,7 +165,7 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next() && (rs.getString(3) != null))
 				{
-					Dir = "profile_image/" + rs.getString(3); // ³ªÁß¿¡ ÆÄÀÏ ÇÕÄ¥ ¶§ °æ·Î º¯°æ ÇÊ¿ä
+					Dir = "profile_image/" + rs.getString(3); // ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¥ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½
 				}
 			else
 				{
