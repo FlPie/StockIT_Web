@@ -97,3 +97,23 @@ create table news(
                      imgPath varchar(128) null
 );
 ```
+
+### 주식 데이터베이스
+주식에 대한 기본적인 데이터들을 저장한 테이블  
+이후 수정될 수도 있음.
+- 현재 csv 파일에서 데이터를 데이터베이스에 저장하는 방식을 사용하고 있음.  
+   - ReadCsv.java 52번 라인에 있는 main을 주석 해제하고 실행하여 데이터 삽입.
+   - csv 파일 출처:
+      - [Nasdaq](https://www.nasdaq.com/market-activity/stocks/screener)  
+      - [한국거래소](http://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd)
+```sql
+create table stock(
+                    Symbol varchar(64) primary key not null,
+                    Market varchar(16) not null,
+                    Name varchar(256) not null,
+                    LastSale numeric(10,2),
+                    MarketCap numeric(32),
+                    Country varchar(32),
+                    Volume numeric(16)
+);
+```
