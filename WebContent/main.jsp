@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ page import="java.util.*" %>
 <%@ page import="news.*" %>
+<%@ page import="stock.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:useBean id="newsdao" class="news.NewsDao" />
 <html>
@@ -22,14 +23,14 @@
     <div class="row">
         <div class="col-9 border mx-auto" id="main-content">
 <%--            주요증시--%>
-            <div class="row mt-2 mb-4 mx-2">
+            <div class="row p-auto mt-2 mb-4 mx-2">
                 <div class="col-12">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <div class="d-flex pt-3 justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                         <h2 class="h2">주요증시</h2>
                     </div>
                     <div class="col-11 overflow-auto" id="stock-chart-container">
                         <c:import url="stock-chart.jsp">
-                            <c:param name="ticker" value="05930.KS"/>
+                            <c:param name="ticker" value="^KS11"/>
                             <c:param name="width" value="document.getElementById('stock-chart-container').clientWidth"/>
                             <c:param name="height" value="300"/>
                         </c:import>
@@ -37,7 +38,7 @@
                 </div>
             </div>
             <%--뉴스--%>
-            <div class="row mt-2 mx-2">
+            <div class="row p-auto mt-2 mx-2">
                 <%
                     List<NewsBean> list = newsdao.getNews();
                     int size = list.size();
@@ -60,7 +61,7 @@
                     NewsBean b;
                 %>
                 <div class="col-12 ">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <div class="d-flex pt-3 justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                         <h2 class="h2">뉴스</h2>
                     </div>
                     <div class="col-12" id="news-grid">
@@ -134,24 +135,32 @@
                 </div>
             </div>
         </div>
-<%--        todo: 주식 테이블 데이터 서버에서 받아와서 처리하도록 변경--%>
-        <div class="col-2 border float-right mx-auto" id="sidebar">
-            <div class="row mt-2">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                    <h4>인기항목</h4>
+        <div class="col-2 float-right mx-auto" id="sidebar">
+            <div class="row mb-2 border">
+                <div class="d-flex pt-3 justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h4>국내주식-시가총액순</h4>
                 </div>
                 <table class="table table-striped">
                     <thead>
                         <th scope="col">#</th>
                         <th scope="col">주식</th>
                     </thead>
+                    <%
+                        StockDao stockdao = new StockDao();
+                        List<StockBean> stockList = stockdao.getTopMarketCap("KS", 10);
+                        StockBean stockB;
+                        int count = 0;
+                    %>
                     <tbody>
                         <c:forEach var="cnt1" begin="1" end="10">
+                            <%
+                                stockB = stockList.get(count++);
+                            %>
                             <tr>
                                 <th scope="row">${cnt1}</th>
                                 <td>
-                                    <a href="#" class="text-decoration-none text-dark">
-                                    삼성전자
+                                    <a href="detail.jsp?ticker=<%= stockB.getSymbol()%>" class="text-decoration-none text-dark">
+                                    <%= stockB.getName() %>
                                     </a>
                                 </td>
                             </tr>
@@ -159,42 +168,56 @@
                     </tbody>
                 </table>
             </div>
-            <div class="row mt-2">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                    <h4>급상승</h4>
+            <div class="row my-2 border">
+                <div class="d-flex pt-3 justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h4>국내주식-거래량순</h4>
                 </div>
                 <table class="table table-striped">
                     <thead>
                         <th scope="col">#</th>
                         <th scope="col">주식</th>
                     </thead>
+                    <%
+                        stockList = stockdao.getTopVolumeCap("KS", 10);
+                        count = 0;
+                    %>
                     <tbody>
                         <c:forEach var="cnt2" begin="1" end="10">
+                            <%
+                                stockB = stockList.get(count++);
+                            %>
                             <tr>
                                 <th scope="row">${cnt2}</th>
-                                <td><a href="#" class="text-decoration-none text-dark">
-                                    삼성전자
+                                <td><a href="detail.jsp?ticker=<%=stockB.getSymbol()%>" class="text-decoration-none text-dark">
+                                    <%=stockB.getName()%>
                                 </a></td>
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table>
             </div>
-            <div class="row mt-2">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                    <h4>거래량</h4>
+            <div class="row my-2 border">
+                <div class="d-flex pt-3 justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h4>해외주식-시가총액순</h4>
                 </div>
                 <table class="table table-striped">
                     <thead>
                         <th scope="col">#</th>
                         <th scope="col">주식</th>
                     </thead>
+                    <%
+                        stockList = stockdao.getTopMarketCap("Nasdaq", 10);
+                        count = 0;
+                    %>
                     <tbody>
                         <c:forEach var="cnt3" begin="1" end="10">
+                            <%
+                                stockB = stockList.get(count++);
+                            %>
                             <tr>
                                 <th scope="row">${cnt3}</th>
-                                <td><a href="#" class="text-decoration-none text-dark">
-                                    삼성전자
+                                <td><a href="detail.jsp?ticker=<%= stockB.getSymbol() %>" class="text-decoration-none text-dark">
+                                    <%= stockB.getName() %>
                                 </a></td>
                             </tr>
                         </c:forEach>
