@@ -63,9 +63,9 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">주식</a>
                             <div class="dropdown-menu">
     <%--                            todo: link to 국내주식-->--%>
-                                <a href="#" class="dropdown-item">국내주식</a>
+                                <a href="k-chart" class="dropdown-item">국내주식</a>
     <%--                            todo: link to 해외주식-->--%>
-                                <a href="#" class="dropdown-item">해외주식</a>
+                                <a href="n-chart" class="dropdown-item">해외주식</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -79,3 +79,4 @@
 </div>
 </body>
 </html>
+
