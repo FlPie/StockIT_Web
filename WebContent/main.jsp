@@ -30,9 +30,9 @@
                     </div>
                     <div class="col-11 overflow-auto" id="stock-chart-container">
                         <c:import url="stock-chart.jsp">
-                            <c:param name="ticker" value="^KS11"/>
-                            <c:param name="width" value="document.getElementById('stock-chart-container').clientWidth"/>
-                            <c:param name="height" value="300"/>
+                            <c:param name="width" value="document.getElementById('stock-chart-container').clientWidth"></c:param>
+                            <c:param name="height" value="300"></c:param>
+                            <c:param name="ticker" value="^KS11"></c:param>
                         </c:import>
                     </div>
                 </div>
