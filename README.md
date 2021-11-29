@@ -44,7 +44,7 @@ mysql jdbc 드라이버 다운로드후 `mysql-connector-java-8.x.x.jar`를
 메일인증 위한 라이브러리
 mail-1.4.7.jar와 activation-1.1.jar 다운 받아서 
 두 jar파일 'StockIT/WebContent/WEB-INF/lib/' 경로에 위치시키기
-(https://heodolf.tistory.com/99)에서 잘 실행되는 mail.jar, activation.jar 다운 가능
+(https://heodolf.tistory.com/99)  잘 실행되는 mail.jar, activation.jar 다운 가능
 
 ### cos.jar
 프로필 수정란에서 선택한 이미지를 프로젝트 폴더에 저장하고, 필요할 때 접근하기 위해  
