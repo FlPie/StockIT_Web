@@ -5,7 +5,7 @@
   Time: 오전 11:25
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <head>
     <title>Title</title>
@@ -23,10 +23,10 @@
             <a href="main.jsp" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <b style="font-size: 20px; font-family: Arial">Stock It</b>
             </a>
-            <div class="d-flex align-items-center align-middle">
-    <%--            todo: link to 검색페이지--%>
-                <form class="w-100 me-3">
-                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            <div class="d-flex container align-items-center align-middle">
+                <form class="input-group" method="post" action="search.jsp">
+                    <input type="search" class="form-control" name="search" placeholder="Search..." aria-label="Search">
+                    <input type="submit" class="btn btn-outline-primary" value="Search">
                 </form>
             </div>
             <div><%-- white bar --%></div>
