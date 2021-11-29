@@ -65,7 +65,7 @@ stockB = stockList.get(0);
                     </div>
                     <div  class="col-12" id = "chart-change-button">
                         <div class="row mx-auto">
-                                <div id = "button">				
+                                <div id = "button">	 <!-- 지금 보니까 주식차트가 마우스로 늘이고 줄이는게 가능하여 이런 버튼이 필요한지 의문이 들음 기능 삭제할수도 있음 -->			
 									<button type="button" class="btn btn-outline-secondary" onclick = "#"> &nbsp; &nbsp;1일 &nbsp; &nbsp;</button>
 									<button type="button" class="btn btn-outline-secondary" onclick = "#"> &nbsp; &nbsp;3일 &nbsp; &nbsp;</button>
 									<button type="button" class="btn btn-outline-secondary" onclick = "#"> &nbsp; &nbsp;7일 &nbsp; &nbsp;</button>
@@ -148,11 +148,22 @@ stockB = stockList.get(0);
                                 </td>
                             </tr>
                            <tr>
-                                <td scope="row" colspan = "2"><button type="button" class="btn btn-outline-secondary">
-                                	<a href="Interests.jsp?ticker=<%= stockB.getSymbol()%>" class="text-decoration-none text-dark">
+                                <td scope="row">                              
+                                	<a href="interestsAction.jsp?ticker=<%= stockB.getSymbol()%>" class="text-decoration-none text-dark">
+                                   	<button type="button" class="btn btn-outline-secondary">
                                    		관심 종목 등록
+                                    </button> 
                                     </a>
-                                </button></td>
+                                   
+                                </td>
+                                <td scope="row">                                
+                                	<a href="interestsDeleteAction.jsp?ticker=<%= stockB.getSymbol()%>" class="text-decoration-none text-dark">
+                                   	<button type="button" class="btn btn-outline-secondary">
+                                   		관심 종목 해제
+                                    </button> 
+                                    </a>
+                                   
+                                </td>                                
                             </tr>
                                                                                  
                     </tbody>
