@@ -130,3 +130,26 @@ create table interest(
                     symbol varchar(64)
 );
 ```
+
+## 주식 차트
+### 주식 api
+rapid api의 YH Finance api를 사용하였음.  
+우선 개인 계정으로 api 키를 발급받았는데 500 request/month 여서 api사용에 주의할것.  
+만약 api 사용 회수가 한계에 가까워지면 프로젝트 제출시에 새 api키를 발급받아 수정해야 함.   
+또 YH Finance api의 historical data가 과거 1년치의 데이터만을 제공하고 있는 듯 해서 그 이전의 그래프는 띄울 수 없음.   
+[YH Finance api](https://rapidapi.com/apidojo/api/yh-finance/)
+### 주식 차트 사용법
+`stock-chart.jsp`페이지를 삽입하고 파라미터 `width`, `height`, `ticker`를 설정한다.  
+`width` : 차트 넓이  
+`height`: 차트 높이  
+`ticker`: 주식 종목 코드
+서브페이지 기능상의 문제로 한 페이지에 2개 이상의 차트를 넣는것은 어려운것 같음.  
+만약 2개 이상의 차트가 필요한 경우 직접 코드를 삽입해야 함.
+```html
+<!-- Example -->
+<c:import url="stock-chart.jsp">
+    <c:param name="width" value="document.getElementById('stock-chart-container').clientWidth"></c:param>
+    <c:param name="height" value="300"></c:param>
+    <c:param name="ticker" value="^KS11"></c:param>
+</c:import>
+```
