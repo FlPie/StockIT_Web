@@ -31,7 +31,6 @@
             </div>
             <div><%-- white bar --%></div>
             <div class="flex-shrink-0 align-item-center align-middle">
-    <%--            todo: link to 마이페이지-->--%>
                 <a href="loginIconAction.jsp" class="d-block link-dark text-decoration-none" id="main-page-user" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
