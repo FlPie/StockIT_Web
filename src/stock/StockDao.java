@@ -69,4 +69,41 @@ public class StockDao {
         }
         return list;
     }
+
+    public List<StockBean> searchStock(String search) {
+        List<StockBean> list = new ArrayList<>();
+        try {
+            String sql = "select * from stock where Symbol like '%" + search + "%'";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                StockBean b = new StockBean();
+                b.setSymbol(rs.getString("Symbol"));
+                b.setMarket(rs.getString("Market"));
+                b.setName(rs.getString("Name"));
+                b.setLastSale(rs.getFloat("LastSale"));
+                b.setMarketCap(rs.getFloat("MarketCap"));
+                b.setCountry(rs.getString("Country"));
+                b.setVolume(rs.getFloat("Volume"));
+                list.add(b);
+            }
+            sql = "select * from stock where Name like '%" + search + "%'";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                StockBean b = new StockBean();
+                b.setSymbol(rs.getString("Symbol"));
+                b.setMarket(rs.getString("Market"));
+                b.setName(rs.getString("Name"));
+                b.setLastSale(rs.getFloat("LastSale"));
+                b.setMarketCap(rs.getFloat("MarketCap"));
+                b.setCountry(rs.getString("Country"));
+                b.setVolume(rs.getFloat("Volume"));
+                list.add(b);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 }
