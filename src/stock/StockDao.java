@@ -69,4 +69,28 @@ public class StockDao {
         }
         return list;
     }
+	public List<StockBean> search(String symbol){ //종목코드 이용해 개별 주식 하나의 세부정보 얻어오기				
+		List<StockBean> list = new ArrayList<>();
+		try{
+			String SQL = "SELECT * FROM stock WHERE Symbol = ?";
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, symbol);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+                StockBean k = new StockBean();
+                k.setSymbol(rs.getString("Symbol"));
+                k.setMarket(rs.getString("Market"));
+                k.setName(rs.getString("Name"));
+                k.setLastSale(rs.getFloat("LastSale"));
+                k.setMarketCap(rs.getFloat("MarketCap"));
+                k.setCountry(rs.getString("Country"));
+                k.setVolume(rs.getFloat("Volume"));
+                list.add(k);
+			}											
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return list;														
+	}
 }
+
