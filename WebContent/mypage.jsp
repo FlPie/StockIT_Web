@@ -38,6 +38,9 @@
                         height: 30px;}
         #nickname_change{ width: 50px;
                           height: 25px;}
+        #logout{position: absolute;
+            right: 1.5%;
+        }
         #delete_image{width: 75px;
                       border-width: 0px;}
         #apply{width: 75px;
@@ -53,7 +56,7 @@
               object-fit: cover;
         }
         #withdrawal{background-color: dodgerblue;
-        			 border-color: dodgerblue;
+        			 border-width: 0px;
         			 width: 10%;
         			 height: 30px
         }
@@ -88,6 +91,7 @@
                 }; 
                 reader.readAsDataURL(event.target.files[0]); 
             }
+            
         </script>
  
     </head>
@@ -128,7 +132,10 @@
                     <tr>
                         <td height = "130">
                            <div id="information"><a href="password_reset.jsp"><small>비밀번호를 변경하고 싶다면 여기를 클릭하세요.</small></a></div>
-                        </td>                        
+                        </td>
+                        <td>
+                        	<div id = "logout"><a href = "logout.jsp"><small>로그아웃</small></a></div>
+                        </td>                     
                     </tr>
                 </table>
             </div>
