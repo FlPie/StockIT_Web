@@ -44,7 +44,7 @@ mysql jdbc 드라이버 다운로드후 `mysql-connector-java-8.x.x.jar`를
 메일인증 위한 라이브러리
 mail-1.4.7.jar와 activation-1.1.jar 다운 받아서 
 두 jar파일 'StockIT/WebContent/WEB-INF/lib/' 경로에 위치시키기
-(https://heodolf.tistory.com/99)에서 잘 실행되는 mail.jar, activation.jar 다운 가능
+(https://heodolf.tistory.com/99)  잘 실행되는 mail.jar, activation.jar 다운 가능
 
 ### cos.jar
 프로필 수정란에서 선택한 이미지를 프로젝트 폴더에 저장하고, 필요할 때 접근하기 위해  
@@ -115,5 +115,18 @@ create table stock(
                     MarketCap numeric(32),
                     Country varchar(32),
                     Volume numeric(16)
+);
+```
+### 관심종목 데이터베이스
+관심종목에 대한 데이터들을 저장한 테이블
+한 종목에대한 모든 정보를 저장하는것은 비효율이라고 판단하여 유저 아이디와 종목코드만을 저장
+로그인한 아이디 세션을 통해 select하여 그 아이디가 가진 모든 종목코드를 가져올수 있도록 만듬 
+
+현재 똑같은 아이디와 종목을 가진 행이 중복될수 있음
+같은 아이디는 여러번 저장될수 있도록하면서 한 아이디당 같은 종목코드는 한번만 저장되도록 만들고 싶은데 해결책이 필요함
+```sql
+create table interest(
+                    userId varchar(64),
+                    symbol varchar(64)
 );
 ```

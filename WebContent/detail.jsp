@@ -1,14 +1,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="stock.*" %>
+<%@ page import="java.util.*" %>
 <html>
 <head>
-    <title>Title</title>
-    
+    <title>세부 정보</title>
     <style>
     	#button{margin:auto;}
     </style>
 </head>
 <body>
+<%
+String symbol = request.getParameter("ticker");
+
+StockDao stockdao = new StockDao();
+List<StockBean> stockList = stockdao.search(symbol);
+StockBean stockB;
+stockB = stockList.get(0);
+%>
 <jsp:include page="header.jsp"/>
 <%--use container-fluid for large page--%>
 <%--<div class="container-fluid">--%>
@@ -19,13 +28,13 @@
             <div class="row mt-2 mb-4 mx-2">
                 <div class="col-12">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                        <h3 class="h3">삼성전자</h3>
-                        <h3 class="h3">코스피</h3>
+                        <h3 class="h3"><%= stockB.getName() %></h3>
+                        <h3 class="h3"><%= stockB.getSymbol() %></h3>
                     </div>
                     <div class="col-11 overflow-auto" id="detail-container">
               			<table class="table table-bordered" style = "text-align:center;vertical-align: middle;">
 						    <tr>
-						      <td scope="col" rowspan = "4" ><h3>70000</h3></td>
+						      <td scope="col" rowspan = "4" ><h3><%=stockB.getLastSale() %></h3></td>
 						      <th scope="col">전일가</th>
 						      <th scope="col">고가</th>
 						      <th scope="col">상한가</th>
@@ -56,7 +65,7 @@
                     </div>
                     <div  class="col-12" id = "chart-change-button">
                         <div class="row mx-auto">
-                                <div id = "button">				
+                                <div id = "button">	 <!-- 지금 보니까 주식차트가 마우스로 늘이고 줄이는게 가능하여 이런 버튼이 필요한지 의문이 들음 기능 삭제할수도 있음 -->			
 									<button type="button" class="btn btn-outline-secondary" onclick = "#"> &nbsp; &nbsp;1일 &nbsp; &nbsp;</button>
 									<button type="button" class="btn btn-outline-secondary" onclick = "#"> &nbsp; &nbsp;3일 &nbsp; &nbsp;</button>
 									<button type="button" class="btn btn-outline-secondary" onclick = "#"> &nbsp; &nbsp;7일 &nbsp; &nbsp;</button>
@@ -105,7 +114,7 @@
                             <tr>
                                 <th scope="row"><p>시가총액</p></th>
                                 <td>
-									<p>446539700000000</p>
+									<p><%=stockB.getMarketCap() %></p>
                                 </td>
                             </tr>
                             <tr>
@@ -139,7 +148,22 @@
                                 </td>
                             </tr>
                            <tr>
-                                <td scope="row" colspan = "2"><button type="button" class="btn btn-outline-secondary" onclick = "#">관심 종목 등록</button></td>
+                                <td scope="row">                              
+                                	<a href="interestsAction.jsp?ticker=<%= stockB.getSymbol()%>" class="text-decoration-none text-dark">
+                                   	<button type="button" class="btn btn-outline-secondary">
+                                   		관심 종목 등록
+                                    </button> 
+                                    </a>
+                                   
+                                </td>
+                                <td scope="row">                                
+                                	<a href="interestsDeleteAction.jsp?ticker=<%= stockB.getSymbol()%>" class="text-decoration-none text-dark">
+                                   	<button type="button" class="btn btn-outline-secondary">
+                                   		관심 종목 해제
+                                    </button> 
+                                    </a>
+                                   
+                                </td>                                
                             </tr>
                                                                                  
                     </tbody>
