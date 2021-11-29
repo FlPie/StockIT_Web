@@ -69,7 +69,45 @@ public class StockDao {
         }
         return list;
     }
-	public List<StockBean> search(String symbol){ //Á¾¸ñÄÚµå ÀÌ¿ëÇØ °³º° ÁÖ½Ä ÇÏ³ªÀÇ ¼¼ºÎÁ¤º¸ ¾ò¾î¿À±â				
+
+    public List<StockBean> searchStock(String search) {
+        List<StockBean> list = new ArrayList<>();
+        try {
+            String sql = "select * from stock where Symbol like '%" + search + "%'";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                StockBean b = new StockBean();
+                b.setSymbol(rs.getString("Symbol"));
+                b.setMarket(rs.getString("Market"));
+                b.setName(rs.getString("Name"));
+                b.setLastSale(rs.getFloat("LastSale"));
+                b.setMarketCap(rs.getFloat("MarketCap"));
+                b.setCountry(rs.getString("Country"));
+                b.setVolume(rs.getFloat("Volume"));
+                list.add(b);
+            }
+            sql = "select * from stock where Name like '%" + search + "%'";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                StockBean b = new StockBean();
+                b.setSymbol(rs.getString("Symbol"));
+                b.setMarket(rs.getString("Market"));
+                b.setName(rs.getString("Name"));
+                b.setLastSale(rs.getFloat("LastSale"));
+                b.setMarketCap(rs.getFloat("MarketCap"));
+                b.setCountry(rs.getString("Country"));
+                b.setVolume(rs.getFloat("Volume"));
+                list.add(b);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    
+	public List<StockBean> search(String symbol){ //ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½				
 		List<StockBean> list = new ArrayList<>();
 		try{
 			String SQL = "SELECT * FROM stock WHERE Symbol = ?";
