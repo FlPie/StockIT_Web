@@ -13,7 +13,7 @@
 <jsp:useBean id="newsdao" class="news.NewsDao" />
 <html>
 <head>
-    <title>Title</title>
+    <title>StockIt</title>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
