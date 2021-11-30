@@ -85,11 +85,11 @@ stockB = stockList.get(0);
                         <h4 class="h4">차트</h4>
                     </div>
                     <div class="col-11 overflow-auto" id="stock-chart-container">
-<%--                        <c:import url="stock-chart.jsp">--%>
-<%--                            <c:param name="ticker" value="005930.KS"/>--%>
-<%--                            <c:param name="width" value="document.getElementById('stock-chart-container').clientWidth"/>--%>
-<%--                            <c:param name="height" value="300"/>--%>
-<%--                        </c:import>--%>
+                        <c:import url="stock-chart.jsp">
+                            <c:param name="ticker" value="005930.KS"/>
+                            <c:param name="width" value="document.getElementById('stock-chart-container').clientWidth"/>
+                            <c:param name="height" value="300"/>
+                        </c:import>
                     </div>
                 </div>
             </div>
