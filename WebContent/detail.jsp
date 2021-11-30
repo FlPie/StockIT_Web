@@ -172,9 +172,7 @@ stockB = stockList.get(0);
         </div>
     </div>
 </div>
-<footer>
-    <br><br>
-</footer>
+<c:import url="footer.jsp"></c:import>
 <script>
     let symbol = "<%=symbol%>";
     let url = "https://stock-data-yahoo-finance-alternative.p.rapidapi.com/v11/finance/quoteSummary/"+ symbol +"?modules=summaryDetail%2Cprice"
