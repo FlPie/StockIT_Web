@@ -54,8 +54,6 @@
       <th scope="col">종목</th>
       <th scope="col">현가</th>
       <th scope="col">거래량</th>
-      <th scope="col">고가</th>
-      <th scope="col">저가</th>
       <th scope="col">시총</th>
     </tr>
   </thead>   
@@ -85,8 +83,7 @@
 						   
 						      <td><%= stockB.getLastSale() %></td>
 						      <td><%= stockB.getVolume()%></td>
-						      <td>고가</td>
-						      <td>저가</td>								<!-- 고가 저가는 아직 DB에 추가되지 않음 -->
+							<!-- 고가 저가 삭제함-->
 						      <td><%= stockB.getMarketCap()%></td>
               				</tr>
              				
