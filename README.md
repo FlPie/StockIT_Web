@@ -164,4 +164,20 @@ rapid api의 YH Finance api를 사용하였음.
 - 주식 차트를 일, 주, 년 등에 따라 변경하는 버튼 또한 차트에서 마우스 드래그 및 스크롤로 제공하는 기능이어서 제거함.
 - 그 외에도 주식 세부정보중 api로 얻을수 있고, 실제 투자의 지표가 되는 항목들을 추가하고, 일부 항목 제거함  
 
-## 테스트 화면
+
+---
+## 구현 화면
+### 메인 페이지
+![main](./README_IMG/main.png)
+### 뉴스 페이지
+![news](./README_IMG/news.jpg)
+### 로그인 페이지
+![login](./README_IMG/login.png)
+### 검색
+![search](./README_IMG/search.png)
+### 주식 세부항목
+![detail](./README_IMG/detail.png)
+### 국내주식
+![k-chart](./README_IMG/k-chart.png)
+### 해외주식
+![n-chart](./README_IMG/n-chart.png)
