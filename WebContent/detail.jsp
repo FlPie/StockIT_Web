@@ -86,7 +86,7 @@ stockB = stockList.get(0);
                     </div>
                     <div class="col-11 overflow-auto" id="stock-chart-container">
                         <c:import url="stock-chart.jsp">
-                            <c:param name="ticker" value="005930.KS"/>
+                            <c:param name="ticker" value="<%= symbol %>"/>
                             <c:param name="width" value="document.getElementById('stock-chart-container').clientWidth"/>
                             <c:param name="height" value="300"/>
                         </c:import>
