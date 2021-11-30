@@ -39,15 +39,22 @@
     </tr>
   </thead>
 <%
-                       	StockDao stockdao = new StockDao();
-                        List<StockBean> stockList = stockdao.getTopMarketCap("KS", 15);
-                        StockBean stockB;
-                        int count = 0;
-                        int a = 1;
-						
+   StockDao stockdao = new StockDao();
+   List<StockBean> stockList = stockdao.getTopMarketCap("KS", 151); //미리 150개의 주식 정보를 리스트로 받아둠
+   StockBean stockB;
+   int start;	//시작점
+   int end;		//끝점
+   
+   if(request.getParameter("begin") == null){	//만약 받은게 없으면 자동으로 1~15
+		start = 1;end = 15;
+	}else{
+	 	start = Integer.parseInt(request.getParameter("begin"));	//받은 begin과 end 값으로 구간을 정해줌
+	 	end = Integer.parseInt(request.getParameter("end"));
+	}
+   int count = start;
 %>   
   <tbody>
-  	<c:forEach var="cnt1" begin= "1" end="15">
+  	<c:forEach var="cnt1" begin= "<%=start %>" end="<%=end %>">		<!-- 정해진 구간값으로 반복문을 돌려서 리스트를 특정구간을 순회함 -->
      <%stockB = stockList.get(count++);%>
                             <tr>
                                 <th scope="row">${cnt1}</th>
@@ -70,17 +77,17 @@
 <div class = "page">
 <nav aria-label="Page navigation example">
   <ul class="pagination">
-    																	<!-- 페이징 기능 구현 필요함! -->
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">4</a></li>
-    <li class="page-item"><a class="page-link" href="#">5</a></li>
-    <li class="page-item"><a class="page-link" href="#">6</a></li>
-    <li class="page-item"><a class="page-link" href="#">7</a></li>
-    <li class="page-item"><a class="page-link" href="#">8</a></li>
-    <li class="page-item"><a class="page-link" href="#">9</a></li>
-    <li class="page-item"><a class="page-link" href="#">10</a></li>
+    																	
+   	<li class="page-item"><a class="page-link" href="k-chart.jsp?begin=1&end=15">1</a></li>		
+    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=16&end=30">2</a></li>
+    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=31&end=45">3</a></li>
+    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=46&end=60">4</a></li>
+    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=61&end=75">5</a></li>
+    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=76&end=90">6</a></li>
+    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=91&end=105">7</a></li>
+    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=106&end=120">8</a></li>
+    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=120&end=135">9</a></li>
+    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=136&end=150">10</a></li>
   </ul>
 </nav>
 </div>
