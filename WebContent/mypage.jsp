@@ -98,7 +98,7 @@
     <body>
         <jsp:include page = "/header.jsp"/>
         <form action = "changeNameAction.jsp" method = "post"> <!-- todo change nickname-->
-            <div id = "profile" class="border">
+            <div id = "profile" class="border shadow-sm">
                 <table id="profile_table">
                     <tr>
                         <td height = "80" valign = "bottom">
@@ -141,7 +141,7 @@
             </div>
         </form>
         <form name = "form_image" action = "profile_image_uploadAction.jsp" method = "post" enctype="multipart/form-data"> <!-- todo change profile image-->
-            <div id = "profile_image" class="border">
+            <div id = "profile_image" class="border shadow-sm">
                 <table id = "image_table">
                     <tr>
                         <td valign = "baseline" width ="40%">

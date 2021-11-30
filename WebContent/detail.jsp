@@ -96,8 +96,8 @@ stockB = stockList.get(0);
 
 
         </div>
-        <div class="col-3 border shadow float-right mx-auto" id="sidebar">
-            <div class="row mt-3">
+        <div class="col-3 border shadow p-3 float-right mx-auto" id="sidebar">
+            <div class="row">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                     <h4>상세 정보</h4>
                 </div>
