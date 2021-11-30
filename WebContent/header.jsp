@@ -24,7 +24,7 @@
                 <b style="font-size: 20px; font-family: Arial">Stock It</b>
             </a>
             <div class="d-flex container align-items-center align-middle">
-                <form class="input-group" method="post" action="search.jsp">
+                <form class="input-group shadow-sm" method="post" action="search.jsp">
                     <input type="search" class="form-control" name="search" placeholder="Search..." aria-label="Search">
                     <input type="submit" class="btn btn-outline-primary" value="Search">
                 </form>
@@ -44,7 +44,7 @@
     <div class="m-4">
 <%--        don't usr fixed-top for large page--%>
 <%--        <nav class="navbar navbar-expand-sm navbar-light bg-light">--%>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light shadow-sm">
 <%--            use container-fluid for large page--%>
 <%--            <div class="container-fluid">--%>
             <div class="container">

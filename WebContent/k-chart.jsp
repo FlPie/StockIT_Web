@@ -39,7 +39,7 @@
 <%--use container-fluid for large page--%>
 <%--<div class="container-fluid">--%>
 
-<div class = "container">
+<div class = "container shadow p-3">
 <div class =  "title">
 <%if(control == 1){ %>
 	<h3>국내 주식 - 시가 총액 순위</h3>

@@ -21,7 +21,7 @@
 <%--<div class="container-fluid">--%>
 <div class="container">
     <div class="row">
-        <div class="col-9 border mx-auto" id="main-content">
+        <div class="col-9 shadow border mx-auto" id="main-content">
 <%--            주요증시--%>
             <div class="row p-auto mt-2 mb-4 mx-2">
                 <div class="col-12">
@@ -71,7 +71,7 @@
                     <div class="col-12" id="news-grid">
                         <div class="row">
                             <% b = list.get(randNum.pop()); %>
-                            <a href="<%= b.getLink() %>" id="main-news1" class="col-7 pt-2 card mb-3 mx-auto text-decoration-none text-dark">
+                            <a href="<%= b.getLink() %>" id="main-news1" class="col-7 pt-2 shadow-sm card mb-3 mx-auto text-decoration-none text-dark">
                                 <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <h5 class="card-title"><%= b.getTitle() %></h5>
@@ -79,14 +79,14 @@
                             </a>
                             <div class="col-4 mb-3 mx-auto">
                                 <% b = list.get(randNum.pop()); %>
-                                <a href="<%= b.getLink() %>" id="main-news2" class="row card pt-2 mb-3 text-decoration-none text-dark">
+                                <a href="<%= b.getLink() %>" id="main-news2" class="row shadow-sm card pt-2 mb-3 text-decoration-none text-dark">
                                     <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title"><%= b.getTitle() %></h5>
                                     </div>
                                 </a>
                                 <% b = list.get(randNum.pop()); %>
-                                <a href="<%= b.getLink() %>" id="main-news3" class="row card pt-2 text-decoration-none text-dark">
+                                <a href="<%= b.getLink() %>" id="main-news3" class="row shadow-sm card pt-2 text-decoration-none text-dark">
                                     <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title"><%= b.getTitle() %></h5>
@@ -96,7 +96,7 @@
                         </div>
                         <div class="row mx-auto">
                             <% b = list.get(randNum.pop()); %>
-                            <a href="<%= b.getLink() %>" id="main-news4" class="card col-12 mb-3 text-decoration-none text-dark">
+                            <a href="<%= b.getLink() %>" id="main-news4" class="card shadow-sm col-12 mb-3 text-decoration-none text-dark">
                                 <div class="row">
                                     <div class="col-4">
                                         <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
@@ -109,7 +109,7 @@
                                 </div>
                             </a>
                             <% b = list.get(randNum.pop()); %>
-                            <a href="<%= b.getLink() %>" id="main-news5" class="card col-12 mb-3 text-decoration-none text-dark">
+                            <a href="<%= b.getLink() %>" id="main-news5" class="card shadow-sm col-12 mb-3 text-decoration-none text-dark">
                                 <div class="row">
                                     <div class="col-4">
                                         <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
@@ -122,7 +122,7 @@
                                 </div>
                             </a>
                             <% b = list.get(randNum.pop()); %>
-                            <a href="<%= b.getLink() %>" id="main-news6" class="card col-12 mb-3 text-decoration-none text-dark">
+                            <a href="<%= b.getLink() %>" id="main-news6" class="card shadow-sm col-12 mb-3 text-decoration-none text-dark">
                                 <div class="row">
                                     <div class="col-4">
                                         <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
@@ -135,7 +135,7 @@
                                 </div>
                             </a>
                             <% b = list.get(randNum.pop()); %>
-                            <a href="<%= b.getLink() %>" id="main-news7" class="card col-12 mb-3 text-decoration-none text-dark">
+                            <a href="<%= b.getLink() %>" id="main-news7" class="card shadow-sm col-12 mb-3 text-decoration-none text-dark">
                                 <div class="row">
                                     <div class="col-4">
                                         <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
@@ -148,7 +148,7 @@
                                 </div>
                             </a>
                             <% b = list.get(randNum.pop()); %>
-                            <a href="<%= b.getLink() %>" id="main-news8" class="card col-12 mb-3 text-decoration-none text-dark">
+                            <a href="<%= b.getLink() %>" id="main-news8" class="card shadow-sm col-12 mb-3 text-decoration-none text-dark">
                                 <div class="row">
                                     <div class="col-4">
                                         <img src="<%= b.getImgPath() %>" class="card-img-top" alt="">
@@ -166,7 +166,7 @@
             </div>
         </div>
         <div class="col-2 float-right mx-auto" id="sidebar">
-            <div class="row mb-2 border">
+            <div class="row mb-3 border shadow">
                 <div class="d-flex pt-3 justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                     <h4>국내주식-시가총액순</h4>
                 </div>
@@ -198,7 +198,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="row my-2 border">
+            <div class="row my-3 border shadow">
                 <div class="d-flex pt-3 justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                     <h4>국내주식-거래량순</h4>
                 </div>
@@ -226,7 +226,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="row my-2 border">
+            <div class="row mt-3 border shadow">
                 <div class="d-flex pt-3 justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                     <h4>해외주식-시가총액순</h4>
                 </div>

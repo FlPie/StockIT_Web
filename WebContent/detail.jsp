@@ -24,7 +24,7 @@ stockB = stockList.get(0);
 <%--<div class="container-fluid">--%>
 <div class="container">
     <div class="row">
-        <div class="col-8 border mx-auto" id="main-content">
+        <div class="col-8 border shadow mx-auto" id="main-content">
 <%--            주요증시--%>
             <div class="row mt-2 mb-4 mx-2">
                 <div class="col-12">
@@ -96,7 +96,7 @@ stockB = stockList.get(0);
 
 
         </div>
-        <div class="col-3 border float-right mx-auto" id="sidebar">
+        <div class="col-3 border shadow float-right mx-auto" id="sidebar">
             <div class="row mt-3">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                     <h4>상세 정보</h4>

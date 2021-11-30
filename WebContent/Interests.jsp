@@ -63,7 +63,7 @@
 <%--use container-fluid for large page--%>
 <%--<div class="container-fluid">--%>
 
-<div id = "container" class ="border">
+<div id = "container" class ="border p-3 shadow">
 <div class =  "title">
 	<h3>관심 종목</h3>
 </div>

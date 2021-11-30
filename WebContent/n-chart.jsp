@@ -22,7 +22,7 @@
 <%--use container-fluid for large page--%>
 <%--<div class="container-fluid">--%>
 
-<div class = "container">
+<div class = "container shadow p-3">
 <div class =  "title">
 	<h3>국내 주식 - 시가 총액 순위</h3>
 </div>
