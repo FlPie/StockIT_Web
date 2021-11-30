@@ -134,6 +134,7 @@ create table interest(
 ## 주식 차트
 ### 주식 api
 > 12월 1일 00시 01분 기준 219/500    
+
 rapid api의 YH Finance api를 사용하였음.  
 우선 개인 계정으로 api 키를 발급받았는데 500 request/month 여서 api사용에 주의할것.  
 만약 api 사용 회수가 한계에 가까워지면 프로젝트 제출시에 새 api키를 발급받아 수정해야 함.   
