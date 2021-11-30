@@ -74,8 +74,6 @@
       <th scope="col">종목</th>
       <th scope="col">현가</th>
       <th scope="col">거래량</th>
-      <th scope="col">고가</th>
-      <th scope="col">저가</th>
       <th scope="col">시가총액</th>
     </tr>
   </thead>
@@ -96,8 +94,6 @@
             <td><a href="detail.jsp?ticker=<%= stockB.getSymbol()%>" class="text-decoration-none text-dark"><%= stockB.getName() %></a></td>
             <td><%= stockB.getLastSale() %></td>
             <td><%= stockB.getVolume()%></td>
-			<td>고가</td>
-			<td>저가</td>								<!-- 고가 저가는 아직 DB에 추가되지 않음 -->
 			<td><%= stockB.getMarketCap()%></td>
         </tr>
 	<%
