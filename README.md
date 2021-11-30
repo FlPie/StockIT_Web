@@ -142,7 +142,7 @@ rapid api의 YH Finance api를 사용하였음.
 `stock-chart.jsp`페이지를 삽입하고 파라미터 `width`, `height`, `ticker`를 설정한다.  
 `width` : 차트 넓이  
 `height`: 차트 높이  
-`ticker`: 주식 종목 코드
+`ticker`: 주식 종목 코드   
 서브페이지 기능상의 문제로 한 페이지에 2개 이상의 차트를 넣는것은 어려운것 같음.  
 만약 2개 이상의 차트가 필요한 경우 직접 코드를 삽입해야 함.
 ```html
@@ -153,3 +153,31 @@ rapid api의 YH Finance api를 사용하였음.
     <c:param name="ticker" value="^KS11"></c:param>
 </c:import>
 ```
+
+## 주식 세부정보
+### 주식 api
+주식 차트에 사용한 api와 다른 api 사용함.   
+[Stock Data - Yahoo Finance Alternative](https://rapidapi.com/principalapis/api/stock-data-yahoo-finance-alternative/)
+> api의 무료 request 횟수를 최대한 적게 사용하기 위해 api를 분산하여 사용함.   
+
+- 기존 주식 세부정보 항목들중 상한가, 하한가의 경우 미국 주식에는 존재하지 않고 있어서 삭제함.
+- 주식 차트를 일, 주, 년 등에 따라 변경하는 버튼 또한 차트에서 마우스 드래그 및 스크롤로 제공하는 기능이어서 제거함.
+- 그 외에도 주식 세부정보중 api로 얻을수 있고, 실제 투자의 지표가 되는 항목들을 추가하고, 일부 항목 제거함  
+
+
+---
+## 구현 화면
+### 메인 페이지
+![main](./README_IMG/main.png)
+### 뉴스 페이지
+![news](./README_IMG/news.jpg)
+### 로그인 페이지
+![login](./README_IMG/login.png)
+### 검색
+![search](./README_IMG/search.png)
+### 주식 세부항목
+![detail](./README_IMG/detail.png)
+### 국내주식
+![k-chart](./README_IMG/k-chart.png)
+### 해외주식
+![n-chart](./README_IMG/n-chart.png)

@@ -13,7 +13,7 @@
 <jsp:useBean id="newsdao" class="news.NewsDao" />
 <html>
 <head>
-    <title>Title</title>
+    <title>StockIt</title>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -27,6 +27,10 @@
                 <div class="col-12">
                     <div class="d-flex pt-3 justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                         <h2 class="h2">주요증시</h2>
+                    </div>
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                        <h3 class="h3">코스피</h3>
+                        <h3 class="h3">^KS11</h3>
                     </div>
                     <div class="col-11 overflow-auto" id="stock-chart-container">
                         <c:import url="stock-chart.jsp">

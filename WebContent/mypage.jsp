@@ -165,5 +165,6 @@
         <form action = "withdrawal.jsp" method = "post">
                 <input type="submit" id = "withdrawal" value = "탈퇴하기">
         </form>
+        <c:import url="footer.jsp"></c:import>
     </body>
 </html>

@@ -17,7 +17,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>뉴스</title>
 </head>
 <body>
 <c:import url="header.jsp"/>
