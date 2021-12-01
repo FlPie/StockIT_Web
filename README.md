@@ -171,7 +171,7 @@ SMTPAuthenticator.java의 getPasswordAuthentication 메서드에 메일을 발�
 
 sendMail.jsp의 
 String host = ""; 각자 구현한 웹사이트 주소 작성필요  
-String from = ""; 메일을 전송할 메일주소 작성필요, gmail로만 메일 발송가능 
+String from = ""; 메일을 발송할 메일주소 작성필요, gmail로만 메일 발송가능 
 
 ---
 ## 구현 화면
