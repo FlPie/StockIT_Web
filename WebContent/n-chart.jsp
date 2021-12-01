@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="stock.*" %>
 <%@ page import="java.util.*" %>
+<%@ page import= "java.math.BigDecimal" %>
 <html>
 <head>
     <title>국내 주식</title>
@@ -52,9 +53,9 @@
     <tr>
       <th scope="col">순위</th>
       <th scope="col">종목</th>
-      <th scope="col">현가</th>
+      <th scope="col">현가(USD)</th>
       <th scope="col">거래량</th>
-      <th scope="col">시총</th>
+      <th scope="col">시총(USD)</th>
     </tr>
   </thead>   
 <%   
@@ -72,6 +73,8 @@
   <tbody>
   	<c:forEach var="cnt1" begin= "<%=start %>" end="<%=end %>">		<!-- 정해진 구간값으로 반복문을 돌려서 리스트를 특정구간을 순회함 -->
      <%stockB = stockList.get(count++);%>
+     <% BigDecimal b2 = new BigDecimal(stockB.getVolume()); %>
+	 <% BigDecimal b3 = new BigDecimal(stockB.getMarketCap()); %>
                             <tr>
                                 <th scope="row">${cnt1}</th>
                                 <td>
@@ -82,9 +85,8 @@
                              
 						   
 						      <td><%= stockB.getLastSale() %></td>
-						      <td><%= stockB.getVolume()%></td>
-							<!-- 고가 저가 삭제함-->
-						      <td><%= stockB.getMarketCap()%></td>
+						      <td><%= b2.toString()%></td>
+						      <td><%= b3.toString()%></td>
               				</tr>
              				
   	</c:forEach>
