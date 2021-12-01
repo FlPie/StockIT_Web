@@ -50,7 +50,7 @@ public class ReadCsv {
     }
 
 //    public static void main(String[] args) {
-////        String actual = FileAssert.printDirectoryTree(new File("./WebContent/csv"));
+////        String actual = FileAssert.printDirectoryTree(new File("./src"));
 ////        System.out.println(actual);
 //        insertStockData();
 //    }

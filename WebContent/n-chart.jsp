@@ -96,18 +96,18 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination">
     																	
-   	<li class="page-item"><a class="page-link" href="k-chart.jsp?begin=1&end=15&control=<%=control%>">1</a></li>		
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=16&end=30&control=<%=control%>">2</a></li>
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=31&end=45&control=<%=control%>">3</a></li>
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=46&end=60&control=<%=control%>">4</a></li>
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=61&end=75&control=<%=control%>">5</a></li>
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=76&end=90&control=<%=control%>">6</a></li>
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=91&end=105&control=<%=control%>">7</a></li>
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=106&end=120&control=<%=control%>">8</a></li>
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=120&end=135&control=<%=control%>">9</a></li>
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?begin=136&end=150&control=<%=control%>">10</a></li>
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?control=1">시가총액 순</a></li>
-    <li class="page-item"><a class="page-link" href="k-chart.jsp?control=2">거래량 순</a></li>
+   	<li class="page-item"><a class="page-link" href="n-chart.jsp?begin=1&end=15&control=<%=control%>">1</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?begin=16&end=30&control=<%=control%>">2</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?begin=31&end=45&control=<%=control%>">3</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?begin=46&end=60&control=<%=control%>">4</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?begin=61&end=75&control=<%=control%>">5</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?begin=76&end=90&control=<%=control%>">6</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?begin=91&end=105&control=<%=control%>">7</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?begin=106&end=120&control=<%=control%>">8</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?begin=120&end=135&control=<%=control%>">9</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?begin=136&end=150&control=<%=control%>">10</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?control=1">시가총액 순</a></li>
+    <li class="page-item"><a class="page-link" href="n-chart.jsp?control=2">거래량 순</a></li>
   </ul>
 </nav>
 </div>

@@ -26,8 +26,8 @@ request.setCharacterEncoding("utf-8");
 //현재는 지메일로만 메일 보낼수있음
 int randNum = getRandom();
 String certificationNum = Integer.toString(randNum);
-String host = "http://localhost:8005/proj1/"; //사이트 주소 
-String from = "관리자 메일";	//메일을 보낼 관리자의 메일 
+String host = "http://localhost:8080/StockIT/"; //사이트 주소
+String from = "ijuyun83@gmail.com";	//메일을 보낼 관리자의 메일
 String to = (String)session.getAttribute("InpEmail");;//메일을 받을 이메일 계정 -> 입력한 이메일
 String subject = "비밀번호 변경을 위한 인증번호를 확인하세요"; //메일 제목
 String content = certificationNum; 						  //메일 내용 일단 1111로 설정해놓음
