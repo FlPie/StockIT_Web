@@ -166,6 +166,11 @@ rapid api의 YH Finance api를 사용하였음.
 - 주식 차트를 일, 주, 년 등에 따라 변경하는 버튼 또한 차트에서 마우스 드래그 및 스크롤로 제공하는 기능이어서 제거함.
 - 그 외에도 주식 세부정보중 api로 얻을수 있고, 실제 투자의 지표가 되는 항목들을 추가하고, 일부 항목 제거함  
 
+## 메일인증
+SMTPAuthenticator.java의 getPasswordAuthentication 메서드에 메일을 발송할 관리자의 메일과 비밀번호 작성필요
+sendMail.jsp의 
+String host = ""; 각자 구현한 웹사이트 주소 작성필요  
+String from = ""; 메일을 전송할 메일주소 작성필요, gmail로만 메일 발송가능 
 
 ---
 ## 구현 화면
