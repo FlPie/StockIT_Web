@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ page import="stock.*" %>
 <%@ page import="java.util.*" %>
+<%@ page import="java.math.BigDecimal" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -338,12 +339,12 @@
                                                 </td>
                                                 <td>
                                                     <div style="width: 100px">
-                                                        <%=b.getVolume()%>
+                                                        <%=(new BigDecimal(b.getVolume())).toString()%>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div style="width: 150px">
-                                                        <%=b.getMarketCap()%>
+                                                        <%=(new BigDecimal(b.getMarketCap())).toString()%>
                                                     </div>
                                                 </td>
                                             </tr>
