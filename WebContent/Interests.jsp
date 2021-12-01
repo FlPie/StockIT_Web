@@ -5,6 +5,7 @@
 <%@ page import = "java.sql.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import = "java.io.PrintWriter" %>
+<%@ page import= "java.math.BigDecimal" %>
 <html>
 
 <head>
@@ -83,18 +84,22 @@
     StockBean stockB;
 	List<StockBean> interestList;
                                         						
+
 %>   
   <tbody>
-  	<% for(i=0;i < count;i++){
+  	<% 
+  		for(i=0;i < count;i++){
   		interestList = stockdao.search(SymbolList.get(i));
         stockB = interestList.get(0);
+        BigDecimal b2 = new BigDecimal(stockB.getVolume()); 
+  	  	BigDecimal b3 = new BigDecimal(stockB.getMarketCap()); 
  	%>  
  		<tr>
         	<th scope="row"><%=i+1 %></th>
             <td><a href="detail.jsp?ticker=<%= stockB.getSymbol()%>" class="text-decoration-none text-dark"><%= stockB.getName() %></a></td>
             <td><%= stockB.getLastSale() %></td>
-            <td><%= stockB.getVolume()%></td>
-			<td><%= stockB.getMarketCap()%></td>
+            <td><%= b2.toString()%></td>
+			<td><%= b3.toString()%></td>
         </tr>
 	<%
   	}
