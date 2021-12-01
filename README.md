@@ -168,6 +168,7 @@ rapid api의 YH Finance api를 사용하였음.
 
 ## 메일인증
 SMTPAuthenticator.java의 getPasswordAuthentication 메서드에 메일을 발송할 관리자의 메일과 비밀번호 작성필요
+
 sendMail.jsp의 
 String host = ""; 각자 구현한 웹사이트 주소 작성필요  
 String from = ""; 메일을 전송할 메일주소 작성필요, gmail로만 메일 발송가능 
